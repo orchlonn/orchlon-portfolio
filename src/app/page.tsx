@@ -12,7 +12,7 @@ export default function Home() {
         </p>
       </div>
       <div className={styles.rightSide}>
-        <p>
+        <p className="">
           I am a junior studying Computer Science at Central Washington
           University with a strong passion for software engineering. I have
           completed three internships, where I gained valuable experience in
@@ -21,6 +21,9 @@ export default function Home() {
           Firebase, which I use to build custom iOS, Android, and web
           applications.
         </p>
+        <h1 className="text-3xl font-bold underline">
+          Hello world!
+        </h1>
       </div>
     </div>
   );

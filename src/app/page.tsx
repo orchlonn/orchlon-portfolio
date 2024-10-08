@@ -1,14 +1,16 @@
+import ExperienceSection from "@/Components/ExperienceSection";
 import GitHubCalendar from "react-github-calendar";
 
 export default function Home() {
   return (
-    <div className="h-screen w-screen bg-[#111729] px-[15vw] pt-32">
+    <div className="overflow-y-auto h-screen w-screen bg-[#111729] px-[15vw] py-32">
       <div className=" flex flex-row text-white">
         <div className="w-1/2">
           <h1 className="">Oscar Chinbat</h1>
           <p className="">Full Stack software engineer</p>
           <p className="">
-            I build pixel-perfect, engaging, and accessible digital experiences.
+            Creating pixel-perfect, engaging, and accessible web and mobile
+            applications.
           </p>
         </div>
         <div className="w-1/2">
@@ -22,34 +24,17 @@ export default function Home() {
             web applications.
           </p>
 
-          {/* Work Experience Section */}
-          <div className="flex">
-            <div className="w-1/5">2024 - Present</div>
-            <div className="w-4/5">
-              <p>Software Engineer Internship</p>
-              <p>
-                Build and maintain critical components used to construct
-                Klaviyo’s frontend, across the whole product. Work closely with
-                cross-functional teams, including developers, designers, and
-                product managers, to implement and advocate for best practices
-                in web accessibility.
-              </p>
-              <div className="flex gap-5">
-                <p>JavaScript</p>
-                <p>TypeScript</p>
-                <p>React Native</p>
-                <p>Expo</p>
-                <p>Firebase</p>
-              </div>
-            </div>
+          {/* Github Section */}
+          <div className="mt-5 mb-[13vh]">
+            <p className="text-lg font-semibold mb-5">
+              Here is my Github Contribution:
+            </p>
+            <GitHubCalendar username="orchlonn" />
           </div>
+
+          {/* Work Experience Section */}
+          <ExperienceSection />
         </div>
-      </div>
-      <div className="mt-[5vh]">
-        <p className="text-lg font-semibold mb-5">
-          Here is my Github Contribution:
-        </p>
-        <GitHubCalendar username="orchlonn" />
       </div>
     </div>
   );

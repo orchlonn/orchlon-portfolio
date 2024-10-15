@@ -3,7 +3,7 @@ import GitHubCalendar from "react-github-calendar";
 
 export default function Home() {
   return (
-    <div className="overflow-y-auto h-screen w-screen bg-[#111729] px-[15vw] py-32">
+    <div className="h-screen w-screen bg-[#111729] px-[15vw] py-32">
       <div className=" flex flex-row text-white">
         <div className="w-1/2">
           <h1 className="">Oscar Chinbat</h1>
@@ -13,7 +13,7 @@ export default function Home() {
             applications.
           </p>
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 overflow-y-auto h-[calc(100vh-8rem)] pb-32 scrollbar-hide">
           <p className="">
             I am a junior studying Computer Science at Central Washington
             University with a strong passion for software engineering. I have
@@ -31,7 +31,6 @@ export default function Home() {
             </p>
             <GitHubCalendar username="orchlonn" />
           </div>
-
           {/* Work Experience Section */}
           <ExperienceSection />
         </div>

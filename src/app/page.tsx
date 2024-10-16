@@ -1,20 +1,21 @@
-import ExperienceSection from "@/Components/ExperienceSection";
+"use client";
+
+// import ExperienceSection from "@/Components/ExperienceSection";
+import HomeLeftSide from "@/Components/Home/HomeLeftSide";
+import Link from "next/link";
+import { useState } from "react";
 import GitHubCalendar from "react-github-calendar";
+import ExperienceSection from "@/Components/ExperienceSection";
 
 export default function Home() {
+  const [section, setSection] = useState(0);
+
   return (
-    <div className="h-screen w-screen bg-[#111729] px-[15vw] py-32">
-      <div className=" flex flex-row text-white">
-        <div className="w-1/2">
-          <h1 className="">Oscar Chinbat</h1>
-          <p className="">Full Stack software engineer</p>
-          <p className="">
-            Creating pixel-perfect, engaging, and accessible web and mobile
-            applications.
-          </p>
-        </div>
-        <div className="w-1/2 overflow-y-auto h-[calc(100vh-8rem)] pb-32 scrollbar-hide">
-          <p className="">
+    <div className="h-screen w-screen bg-[#111729] px-[15vw] py-32 overflow-y-auto">
+      <div className="flex flex-row text-white">
+        <HomeLeftSide setSection={setSection} />
+        <div className="w-1/2 h-[calc(100vh-8rem)] pb-32 scrollbar-hide">
+          <p className="text-slate-400 leading-relaxed">
             I am a junior studying Computer Science at Central Washington
             University with a strong passion for software engineering. I have
             completed three internships, where I gained valuable experience in
@@ -23,17 +24,10 @@ export default function Home() {
             NextJS, and Firebase, which I use to build custom iOS, Android, and
             web applications.
           </p>
-
-          {/* Github Section */}
-          <div className="mt-5 mb-[13vh]">
-            <p className="text-lg font-semibold mb-5">
-              Here is my Github Contribution:
-            </p>
-            <GitHubCalendar username="orchlonn" />
+          <div>
+            {/* {section === 0 && <Home />} */}
+            {section === 1 && <ExperienceSection />}
           </div>
-          {/* Work Experience Section */}
-          
-          <ExperienceSection />
         </div>
       </div>
     </div>

@@ -1,6 +1,20 @@
 import Link from "next/link";
 
 const HomeLeftSide = ({ setSection }) => {
+  const Navbar = ({ index, title }) => {
+    return (
+      <li>
+        <a
+          className="text-[28px] font-medium"
+          onClick={() => {
+            setSection(index);
+          }}
+        >
+          {title}
+        </a>
+      </li>
+    );
+  };
   return (
     <div className="w-1/2">
       <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
@@ -14,29 +28,12 @@ const HomeLeftSide = ({ setSection }) => {
         applications.
       </p>
       <div className="flex flex-col gap-3 my-[30%]">
-        <a
-          className="text-[28px] font-medium"
-          href=""
-          onClick={() => {
-            setSection(0);
-          }}
-        >
-          /home
-        </a>
-        <a className="text-[28px] font-medium" href="">
-          /about
-        </a>
-        <a
-          className="text-[28px] font-medium"
-          onClick={() => {
-            setSection(1);
-          }}
-        >
-          /experience
-        </a>
-        <a className="text-[28px] font-medium" href="">
-          /projects
-        </a>
+        <ul>
+          <Navbar index={0} title="/home" />
+          <Navbar index={1} title="/about" />
+          <Navbar index={2} title="/experience" />
+          <Navbar index={3} title="/projects" />
+        </ul>
       </div>
     </div>
   );

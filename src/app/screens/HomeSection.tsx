@@ -1,12 +1,10 @@
 import ExperienceItem from "@/Components/ExperienceItem";
+import SectionHeader from "@/Components/SectionHeader";
 
 const HomeSection = () => {
   return (
     <div className="flex flex-col gap-y-5">
-      <h1 className="flex section-header text-2xl font-bold mt-8 items-center">
-        /home
-        <span className="nav-indicator mr-4 h-[1px] w-32 bg-slate-600 transition-all ml-3"></span>
-      </h1>
+      <SectionHeader title="home" />
       <p className="text-slate-400 leading-relaxed">
         I am a junior studying Computer Science at Central Washington University
         with a strong passion for software engineering. I have completed three

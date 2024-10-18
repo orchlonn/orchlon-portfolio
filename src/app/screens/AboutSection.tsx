@@ -1,9 +1,10 @@
+import SectionHeader from "@/Components/SectionHeader";
 import Link from "next/link";
 
 const AboutSection = () => {
   return (
     <div className="w-1/2">
-      <p>About section</p>
+      <SectionHeader title="about" />
     </div>
   );
 };

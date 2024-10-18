@@ -1,4 +1,5 @@
 import SectionHeader from "@/Components/SectionHeader";
+import GitHubCalendar from "react-github-calendar";
 
 const HomeSection = () => {
   return (
@@ -12,6 +13,9 @@ const HomeSection = () => {
         tools include React Native, Expo, Node.js, NextJS, and Firebase, which I
         use to build custom iOS, Android, and web applications.
       </p>
+      <div className="w-[130%]">
+        <GitHubCalendar username="orchlonn" />
+      </div>
     </div>
   );
 };

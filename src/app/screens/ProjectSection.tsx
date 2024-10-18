@@ -1,7 +1,6 @@
 import SectionHeader from "@/Components/SectionHeader";
-import Link from "next/link";
 
-const ProjectSection = ({ setSection }) => {
+const ProjectSection = () => {
   return (
     <div className="w-1/2">
       <SectionHeader title="projects" />

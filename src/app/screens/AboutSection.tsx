@@ -1,5 +1,4 @@
 import SectionHeader from "@/Components/SectionHeader";
-import Link from "next/link";
 
 const AboutSection = () => {
   return (

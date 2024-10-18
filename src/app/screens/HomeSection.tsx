@@ -1,4 +1,3 @@
-import ExperienceItem from "@/Components/ExperienceItem";
 import SectionHeader from "@/Components/SectionHeader";
 
 const HomeSection = () => {

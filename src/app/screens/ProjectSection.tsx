@@ -5,16 +5,19 @@ import SingleProject from "@/Components/Project/SingleProject";
 
 const ProjectSection = () => {
   return (
-    <div className="flex gap-10 my-5">
-      <SingleProject
-        title="Moves"
-        description="Location-Based Event Discovery App."
-      />
-      <SingleProject
-        title="Logbook"
-        description="Location-Based Event Discovery App."
-      />
-    </div>
+    <>
+      <SectionHeader title="projects" />
+      <div className="flex gap-16 mt-10 ">
+        <SingleProject
+          title="Moves"
+          description="Location-Based Event Discovery App."
+        />
+        <SingleProject
+          title="Logbook"
+          description="Users can pin their location on map."
+        />
+      </div>
+    </>
   );
 };
 

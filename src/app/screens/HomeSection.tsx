@@ -1,6 +1,3 @@
-import SectionHeader from "@/Components/SectionHeader";
-import GitHubCalendar from "react-github-calendar";
-
 const HomeSection = () => {
   return (
     <div className="flex flex-col gap-y-5">

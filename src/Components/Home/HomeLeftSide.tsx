@@ -1,9 +1,8 @@
-import IconButton from "../IconButton";
-import { FaInstagram, FaLinkedin, FaGithub, FaSpotify } from "react-icons/fa";
 import SocialLinks from "./SocialLinks";
 
-const HomeLeftSide = ({ setSection }) => {
-  const Navbar = ({ index, title }) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HomeLeftSide = ({ setSection }: { setSection: any }) => {
+  const Navbar = ({ index, title }: { index: number; title: string }) => {
     return (
       <a
         className="text-[28px] font-medium cursor-pointer"

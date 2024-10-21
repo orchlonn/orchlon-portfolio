@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const ExperienceItem = ({
   date,
   position,
@@ -12,8 +10,8 @@ const ExperienceItem = ({
   position: string;
   company: string;
   companyUrl: string;
-  description: any;
-  skills: any;
+  description: string[];
+  skills: string[];
 }) => {
   return (
     <div className="flex my-3">

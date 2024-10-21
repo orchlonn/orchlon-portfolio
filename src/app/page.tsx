@@ -3,7 +3,6 @@
 import HomeLeftSide from "@/Components/Home/HomeLeftSide";
 import { useState } from "react";
 import Experience from "./screens/Experience";
-import HomeSection from "./screens/HomeSection";
 import AboutSection from "./screens/AboutSection";
 import ProjectSection from "./screens/ProjectSection";
 

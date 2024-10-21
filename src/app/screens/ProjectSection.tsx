@@ -5,18 +5,15 @@ import SingleProject from "@/Components/Project/SingleProject";
 
 const ProjectSection = () => {
   return (
-    <div>
-      <SectionHeader title="projects" />
-      <div className="flex gap-10 my-5">
-        <SingleProject
-          title="Moves"
-          description="Location-Based Event Discovery App."
-        />
-        <SingleProject
-          title="Logbook"
-          description="Location-Based Event Discovery App."
-        />
-      </div>
+    <div className="flex gap-10 my-5">
+      <SingleProject
+        title="Moves"
+        description="Location-Based Event Discovery App."
+      />
+      <SingleProject
+        title="Logbook"
+        description="Location-Based Event Discovery App."
+      />
     </div>
   );
 };

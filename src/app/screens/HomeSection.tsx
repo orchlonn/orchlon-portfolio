@@ -4,7 +4,6 @@ import GitHubCalendar from "react-github-calendar";
 const HomeSection = () => {
   return (
     <div className="flex flex-col gap-y-5">
-      <SectionHeader title="home" />
       <p className="text-slate-400 leading-relaxed">
         I am a junior studying Computer Science at Central Washington University
         with a strong passion for software engineering. I have completed three

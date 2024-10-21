@@ -8,7 +8,7 @@ import AboutSection from "./screens/AboutSection";
 import ProjectSection from "./screens/ProjectSection";
 
 export default function Home() {
-  const [section, setSection] = useState(3);
+  const [section, setSection] = useState(0);
 
   return (
     <div className="h-screen w-screen px-[15vw] py-28">
@@ -17,7 +17,6 @@ export default function Home() {
         <div className="w-1/2">
           <div>
             <AboutSection />
-            {/* <HomeSection /> */}
             <Experience />
             <ProjectSection />
           </div>

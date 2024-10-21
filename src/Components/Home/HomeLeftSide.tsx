@@ -1,3 +1,7 @@
+import IconButton from "../IconButton";
+import { FaInstagram, FaLinkedin, FaGithub, FaSpotify } from "react-icons/fa";
+import SocialLinks from "./SocialLinks";
+
 const HomeLeftSide = ({ setSection }) => {
   const Navbar = ({ index, title }) => {
     return (
@@ -24,11 +28,11 @@ const HomeLeftSide = ({ setSection }) => {
         applications.
       </p>
       <div className="flex flex-col gap-3 my-[30%]">
-        <Navbar index={0} title="/home" />
         <Navbar index={1} title="/about" />
         <Navbar index={2} title="/experience" />
         <Navbar index={3} title="/projects" />
       </div>
+      <SocialLinks />
     </div>
   );
 };

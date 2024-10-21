@@ -1,10 +1,12 @@
+import Image from "next/image";
 import SectionHeader from "@/Components/SectionHeader";
 
 const ProjectSection = () => {
   return (
     <div className="w-1/2">
       <SectionHeader title="projects" />
-      <p>My project section</p>
+      <h2>Moves</h2>
+      <h2>Location-Based Event Discovery App</h2>
     </div>
   );
 };

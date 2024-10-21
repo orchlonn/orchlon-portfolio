@@ -13,9 +13,6 @@ const HomeSection = () => {
         tools include React Native, Expo, Node.js, NextJS, and Firebase, which I
         use to build custom iOS, Android, and web applications.
       </p>
-      <div className="w-[130%]">
-        <GitHubCalendar username="orchlonn" />
-      </div>
     </div>
   );
 };

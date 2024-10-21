@@ -1,4 +1,4 @@
-const HomeLeftSide = ({ setSection }) => {
+const SingleProject = ({ setSection }) => {
   const Navbar = ({ index, title }) => {
     return (
       <a
@@ -33,4 +33,4 @@ const HomeLeftSide = ({ setSection }) => {
   );
 };
 
-export default HomeLeftSide;
+export default SingleProject;

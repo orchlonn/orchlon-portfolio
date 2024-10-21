@@ -8,18 +8,18 @@ import AboutSection from "./screens/AboutSection";
 import ProjectSection from "./screens/ProjectSection";
 
 export default function Home() {
-  const [section, setSection] = useState(0);
+  const [section, setSection] = useState(3);
 
   return (
-    <div className="h-screen w-screen px-[15vw] my-28">
+    <div className="h-screen w-screen px-[15vw] py-28">
       <div className="flex flex-row text-white">
         <HomeLeftSide setSection={setSection} />
         <div className="w-1/2">
           <div>
-            {section === 0 && <HomeSection />}
-            {section === 1 && <AboutSection />}
-            {section === 2 && <Experience />}
-            {section === 3 && <ProjectSection />}
+            <AboutSection />
+            {/* <HomeSection /> */}
+            <Experience />
+            <ProjectSection />
           </div>
         </div>
       </div>

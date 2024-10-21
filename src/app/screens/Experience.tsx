@@ -3,7 +3,7 @@ import SectionHeader from "@/Components/SectionHeader";
 
 const Experience = () => {
   return (
-    <div className="flex flex-col gap-y-5 ">
+    <div className="flex flex-col gap-y-5 my-5">
       <SectionHeader title="experience" />
       <ExperienceItem
         date="JUN – SEP 2024"

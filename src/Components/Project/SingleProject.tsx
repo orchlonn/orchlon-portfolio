@@ -1,34 +1,12 @@
-const SingleProject = ({ setSection }) => {
-  const Navbar = ({ index, title }) => {
-    return (
-      <a
-        className="text-[28px] font-medium cursor-pointer"
-        onClick={() => {
-          setSection(index);
-        }}
-      >
-        {title}
-      </a>
-    );
-  };
+const SingleProject = ({ title, description, imageUrl }) => {
   return (
-    <div className="w-1/2">
-      <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
-        Oscar Chinbat
-      </h1>
-      <p className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-        Full Stack software engineer
-      </p>
-      <p className="mt-4 max-w-xs leading-normal text-slate-400">
-        Creating pixel-perfect, engaging, and accessible web and mobile
-        applications.
-      </p>
-      <div className="flex flex-col gap-3 my-[30%]">
-        <Navbar index={0} title="/home" />
-        <Navbar index={1} title="/about" />
-        <Navbar index={2} title="/experience" />
-        <Navbar index={3} title="/projects" />
-      </div>
+    <div className="w-1/2 flex flex-col">
+      <h2 className="text-3xl font-bold">{title}</h2>
+      <h2 className="text-l">{description}</h2>
+      <video autoPlay muted playsInline loop className="rounded-lg">
+        <source src="https://firebasestorage.googleapis.com/v0/b/orchlon-portfolio.appspot.com/o/Simulator%20Screen%20Recording%20-%20iPhone%2015%20Pro%20-%202024-10-20%20at%2017.20.40.mp4?alt=media&token=b18b5d7a-cc6f-4f79-b1c4-1699a5fa378e" />
+        Your browser does not support the video tag...
+      </video>
     </div>
   );
 };

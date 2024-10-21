@@ -1,12 +1,22 @@
+import { Suspense } from "react";
 import Image from "next/image";
 import SectionHeader from "@/Components/SectionHeader";
+import SingleProject from "@/Components/Project/SingleProject";
 
 const ProjectSection = () => {
   return (
-    <div className="w-1/2">
+    <div>
       <SectionHeader title="projects" />
-      <h2>Moves</h2>
-      <h2>Location-Based Event Discovery App</h2>
+      <div className="flex gap-10 my-5">
+        <SingleProject
+          title="Moves"
+          description="Location-Based Event Discovery App."
+        />
+        <SingleProject
+          title="Logbook"
+          description="Location-Based Event Discovery App."
+        />
+      </div>
     </div>
   );
 };

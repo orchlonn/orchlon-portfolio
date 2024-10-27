@@ -5,7 +5,7 @@ const ProjectSection = () => {
   return (
     <>
       <SectionHeader title="projects" />
-      <div className="flex gap-16 mt-10 ">
+      <div className="xl:flex xl:gap-16 mt-10">
         <SingleProject
           title="Moves"
           description="Location-Based Event Discovery App."

@@ -8,7 +8,7 @@ const SingleProject = ({
   imageUrl: string;
 }) => {
   return (
-    <div className="w-1/2 flex flex-col gap-4">
+    <div className="xl:w-1/2 flex flex-col gap-4 xl:mt-0 mt-10">
       <div>
         <h2 className="text-3xl font-bold">{title}</h2>
         <h2 className="text-l mt-1">{description}</h2>

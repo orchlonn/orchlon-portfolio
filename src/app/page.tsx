@@ -10,7 +10,7 @@ export default function Home() {
   const [section, setSection] = useState(1);
 
   return (
-    <div className="h-screen w-screen px-[15vw] py-28">
+    <div className="h-screen w-screen px-[15vw] xl:py-28 py-14">
       <div className="xl:flex xl:flex-row text-white">
         <HomeLeftSide setSection={setSection} />
         <div className="xl:w-1/2 pb-10">

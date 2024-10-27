@@ -15,7 +15,7 @@ const HomeLeftSide = ({ setSection }: { setSection: any }) => {
     );
   };
   return (
-    <div className="w-1/2">
+    <div className="xl:w-1/2 mb-10">
       <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
         Oscar Chinbat
       </h1>

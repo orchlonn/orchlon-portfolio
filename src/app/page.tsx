@@ -11,9 +11,9 @@ export default function Home() {
 
   return (
     <div className="h-screen w-screen px-[15vw] py-28">
-      <div className="flex flex-row text-white">
+      <div className="xl:flex xl:flex-row text-white">
         <HomeLeftSide setSection={setSection} />
-        <div className="w-1/2">
+        <div className="xl:w-1/2 pb-10">
           <div>
             {section == 1 ? <AboutSection /> : null}
             {section == 2 ? <Experience /> : null}

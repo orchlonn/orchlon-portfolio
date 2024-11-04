@@ -20,6 +20,12 @@ const AboutSection = () => {
         <div className="xl:w-[150%]">
           <GitHubCalendar username="orchlonn" />
         </div>
+        <div className="flex mt-10">
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <button className="font-semibold">Resume</button>
+          </a>
+          <p className="ml-2 text-slate-400">Last updated: 2024-11-03</p>
+        </div>
       </div>
     </div>
   );

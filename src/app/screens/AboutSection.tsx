@@ -14,9 +14,7 @@ const AboutSection = () => {
         use to build custom iOS, Android, and web applications.
       </p>
       <div>
-        <h2 className="mt-14 text-l mb-7">
-          Here are my contributions on GitHub:
-        </h2>
+        <h2 className="mt-14 text-l mb-7">My contributions on GitHub:</h2>
         <div className="xl:w-[150%]">
           <GitHubCalendar username="orchlonn" />
         </div>

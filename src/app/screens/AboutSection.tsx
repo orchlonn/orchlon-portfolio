@@ -22,7 +22,7 @@ const AboutSection = () => {
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
             <button className="font-semibold">Resume</button>
           </a>
-          <p className="ml-2 text-slate-400">Last updated: 2024-11-03</p>
+          <p className="ml-2 text-slate-400">Last updated: 03-31-2025</p>
         </div>
       </div>
     </div>

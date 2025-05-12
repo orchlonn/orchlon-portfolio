@@ -22,6 +22,8 @@ const Experience = () => {
             "NestJS",
             "Tailwind",
             "Daisy UI",
+            "HTML",
+            "CSS",
           ]}
         />
         <ExperienceItem
@@ -41,6 +43,8 @@ const Experience = () => {
             "CloudSearch",
             "TypeScript",
             "React",
+            "HTML",
+            "CSS",
             "Node.js",
           ]}
         />
@@ -61,6 +65,8 @@ const Experience = () => {
             "Node.js",
             "Expo",
             "Firebase",
+            "HTML",
+            "CSS",
           ]}
         />
         <ExperienceItem
@@ -72,7 +78,15 @@ const Experience = () => {
             "● Gained knowledge of React Native's lifecycle and hooks while creating pixel-perfect user interfaces.",
           ]}
           companyUrl="https://www.steppeholding.mn/en"
-          skills={["JavaScript", "React Native", "Expo", "Firebase", "Node.js"]}
+          skills={[
+            "JavaScript",
+            "React Native",
+            "Expo",
+            "Firebase",
+            "Node.js",
+            "HTML",
+            "CSS",
+          ]}
         />
       </div>
     </>

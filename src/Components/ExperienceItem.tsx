@@ -1,48 +1,65 @@
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+import Profile from "../../public/pypup_logo.webp";
+
 const ExperienceItem = ({
-  date,
   position,
   company,
   description,
   companyUrl,
   skills,
 }: {
-  date: string;
   position: string;
   company: string;
   companyUrl: string;
   description: string[];
   skills: string[];
 }) => {
+  const [showAllSkills, setShowAllSkills] = useState(false);
+  const skillsToShow = showAllSkills ? skills : skills.slice(0, 3);
   return (
-    <div className="flex my-3">
-      <p className="w-1/5 z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2">
-        {date}
-      </p>
-      <div className="w-4/5">
-        <a
-          className="font-medium leading-snug text-slate-200"
-          href={companyUrl}
-          target="_blank"
-        >
-          <span className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
-            {position} • {company}
-          </span>
-        </a>
-        {description.map((desc, index) => (
-          <p className="mt-1 text-sm leading-normal text-slate-400" key={index}>
-            {desc}
+    <div className="flex flex-col gap-y-3 my-3 w-2/5 border-2 border-teal-300 rounded-3xl py-10 px-16">
+      <div className="flex justify-center items-center">
+        <Image
+          src={Profile}
+          width={65}
+          height={65}
+          alt="Picture of the author"
+          className="rounded-full"
+        />
+      </div>
+      <div>
+        <p className="text-slate-200 text-center">{company}</p>
+        <p className="text-slate-200 text-center">{position}</p>
+      </div>
+      <a
+        className="text-center text-slate-200"
+        href={companyUrl}
+        target="_blank"
+      ></a>
+      {description.map((desc, index) => (
+        <p className="mt-1 text-sm leading-normal text-slate-400" key={index}>
+          {desc}
+        </p>
+      ))}
+      <div className="flex flex-row flex-wrap gap-x-5 gap-y-3 my-3">
+        {skillsToShow.map((skill, index) => (
+          <p
+            className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300"
+            key={index}
+          >
+            {skill}
           </p>
         ))}
-        <div className="flex flex-row flex-wrap gap-x-5 gap-y-3 my-3">
-          {skills.map((skill, index) => (
-            <p
-              className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300"
-              key={index}
-            >
-              {skill}
-            </p>
-          ))}
-        </div>
+        {skills.length > 3 && (
+          <button
+            onClick={() => setShowAllSkills(!showAllSkills)}
+            className="flex items-center px-3 py-1 text-xs font-medium leading-5 text-teal-300"
+          >
+            {showAllSkills ? "Show Less" : `Show All (${skills.length - 3})`}
+          </button>
+        )}
       </div>
     </div>
   );

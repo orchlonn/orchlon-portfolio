@@ -29,7 +29,7 @@ const AboutMe = () => {
           </p>
         </div>
       </div>
-      <div className="w-full xl:max-w-3xl mt-8">
+      <div className="w-full xl:max-w-3xl mt-8 text-white">
         <GitHubCalendar username="orchlonn" />
       </div>
     </div>

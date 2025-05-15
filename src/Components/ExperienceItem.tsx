@@ -1,7 +1,7 @@
 "use client";
+import { StaticImageData } from "next/image";
 import Image from "next/image";
 import { useState } from "react";
-import Profile from "../../public/pypup_logo.webp";
 
 const ExperienceItem = ({
   position,
@@ -9,29 +9,35 @@ const ExperienceItem = ({
   description,
   companyUrl,
   skills,
+  image,
 }: {
   position: string;
   company: string;
   companyUrl: string;
   description: string[];
   skills: string[];
+  image: StaticImageData | string;
 }) => {
   const [showAllSkills, setShowAllSkills] = useState(false);
   const skillsToShow = showAllSkills ? skills : skills.slice(0, 3);
   return (
-    <div className="flex flex-col gap-y-3 my-3 w-2/5 border-2 border-teal-300 rounded-3xl py-10 px-16">
+    <div className="flex flex-col gap-y-2 my-3 w-2/5 border-2 border-teal-300 rounded-3xl py-5 px-20">
       <div className="flex justify-center items-center">
         <Image
-          src={Profile}
+          src={image}
           width={65}
           height={65}
           alt="Picture of the author"
-          className="rounded-full"
+          className="rounded-full my-1"
         />
       </div>
       <div>
-        <p className="text-slate-200 text-center">{company}</p>
-        <p className="text-slate-200 text-center">{position}</p>
+        <p className="text-slate-200 text-center font-semibold text-sm my-1">
+          {company}
+        </p>
+        <p className="text-slate-200 text-center font-semibold text-sm">
+          {position}
+        </p>
       </div>
       <a
         className="text-center text-slate-200"

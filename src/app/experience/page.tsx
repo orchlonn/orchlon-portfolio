@@ -1,10 +1,36 @@
 import ExperienceItem from "@/Components/ExperienceItem";
+import Pypup from "../../../public/pypup_logo.webp";
+import MocoLogo from "../../../public/moco_logo.jpeg";
+import SteppelinkLogo from "../../../public/steppelink_logo.webp";
+import SCCLogo from "../../../public/SCC_logo.png";
+import CWULogo from "../../../public/CWU_logo.png";
 
 const Experience = () => {
   return (
     <div className="flex flex-col items-center gap-y-5 my-10">
       <ExperienceItem
-        position="Software Engineering Intern | Jun 2024 - Sep 2024"
+        image={CWULogo}
+        position="Undergraduate Researcher | Apr 2025 - Present"
+        company="Central Washington University"
+        description={[
+          "● Implemented a flash-card feature for the platform, utilizing Angular and Tailwind CSS for the front end and NestJS for the back end, resulting in a 30% boost in website traffic and attracting approximately 150 daily users.",
+          "● Developed and consistently updated comprehensive technical documentation for both frontend and backend components, leading to a 20% reduction in troubleshooting time and a 15% increase in onboarding efficiency for new team members.",
+        ]}
+        companyUrl="https://pypup.com/"
+        skills={[
+          "TypeScript",
+          "Angular",
+          "MySQL",
+          "NestJS",
+          "Tailwind",
+          "Daisy UI",
+          "HTML",
+          "CSS",
+        ]}
+      />
+      <ExperienceItem
+        image={Pypup}
+        position="Software Engineer Intern | Jun 2024 - Sep 2024"
         company="Pypup.com"
         description={[
           "● Implemented a flash-card feature for the platform, utilizing Angular and Tailwind CSS for the front end and NestJS for the back end, resulting in a 30% boost in website traffic and attracting approximately 150 daily users.",
@@ -23,6 +49,7 @@ const Experience = () => {
         ]}
       />
       <ExperienceItem
+        image={SCCLogo}
         position="Cloud Research Assistant | May 2023- Feb 2024"
         company="Seattle Central College"
         description={[
@@ -44,7 +71,8 @@ const Experience = () => {
         ]}
       />
       <ExperienceItem
-        position="Software Engineering Intern | Jun 2023 - Sep 2023"
+        image={MocoLogo}
+        position="Software Engineer Intern | Jun 2023 - Sep 2023"
         company="Mongol Content"
         description={[
           "● Developed a mobile application for iOS, and Android using React Native.",
@@ -64,7 +92,8 @@ const Experience = () => {
         ]}
       />
       <ExperienceItem
-        position="Software Engineering Intern | Jun 2022 - Sep 2022"
+        image={SteppelinkLogo}
+        position="Software Engineer Intern | Jun 2022 - Sep 2022"
         company="Steppe Link Holding"
         description={[
           "● Developed a mobile application for iOS, and Android using React Native.",

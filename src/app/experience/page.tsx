@@ -7,16 +7,29 @@ import CWULogo from "../../../public/CWU_logo.png";
 
 const Experience = () => {
   return (
-    <div className="flex flex-col items-center gap-y-5 my-10">
+    <div className="flex flex-col items-center gap-y-3 my-10">
       <ExperienceItem
         image={CWULogo}
         position="Undergraduate Researcher | Apr 2025 - Present"
         company="Central Washington University"
         description={[
-          "● Implemented a flash-card feature for the platform, utilizing Angular and Tailwind CSS for the front end and NestJS for the back end, resulting in a 30% boost in website traffic and attracting approximately 150 daily users.",
-          "● Developed and consistently updated comprehensive technical documentation for both frontend and backend components, leading to a 20% reduction in troubleshooting time and a 15% increase in onboarding efficiency for new team members.",
+          <>
+            ● Implemented a flash-card feature for the platform, utilizing
+            Angular and Tailwind CSS for the front end and NestJS for the back
+            end, resulting in a
+            <span className="font-bold text-white"> 30%</span> boost in website
+            traffic and attracting approximately
+            <span className="font-bold text-white"> 1500</span> daily users.
+          </>,
+          <>
+            ● Developed and consistently updated comprehensive technical
+            documentation for both frontend and backend components, leading to a
+            <span className="font-bold text-white"> 20%</span> reduction in
+            troubleshooting time and a{" "}
+            <span className="font-bold text-white"> 15%</span> increase in
+            onboarding efficiency for new team members.
+          </>,
         ]}
-        companyUrl="https://pypup.com/"
         skills={[
           "TypeScript",
           "Angular",
@@ -33,10 +46,23 @@ const Experience = () => {
         position="Software Engineer Intern | Jun 2024 - Sep 2024"
         company="Pypup.com"
         description={[
-          "● Implemented a flash-card feature for the platform, utilizing Angular and Tailwind CSS for the front end and NestJS for the back end, resulting in a 30% boost in website traffic and attracting approximately 150 daily users.",
-          "● Developed and consistently updated comprehensive technical documentation for both frontend and backend components, leading to a 20% reduction in troubleshooting time and a 15% increase in onboarding efficiency for new team members.",
+          <>
+            ● Implemented a flash-card feature for the platform, utilizing
+            Angular and Tailwind CSS for the front end and NestJS for the back
+            end, resulting in a
+            <span className="font-bold text-white"> 30%</span> boost in website
+            traffic and attracting approximately
+            <span className="font-bold text-white"> 1500</span> daily users.
+          </>,
+          <>
+            ● Developed and consistently updated comprehensive technical
+            documentation for both frontend and backend components, leading to a
+            <span className="font-bold text-white"> 20%</span> reduction in
+            troubleshooting time and a{" "}
+            <span className="font-bold text-white"> 15%</span> increase in
+            onboarding efficiency for new team members.
+          </>,
         ]}
-        companyUrl="https://pypup.com/"
         skills={[
           "TypeScript",
           "Angular",
@@ -53,9 +79,14 @@ const Experience = () => {
         position="Cloud Research Assistant | May 2023- Feb 2024"
         company="Seattle Central College"
         description={[
-          "● Leveraged AWS educational platform to evaluate cost and performance metrics for small e-commerce businesses using EC2, VPS, S3, CloudSearch, and DynamoDB, optimizing resource usage by 20% while maintaining zero cost.",
+          <>
+            ● Leveraged AWS educational platform to evaluate cost and
+            performance metrics for small e-commerce businesses using EC2, VPS,
+            S3, CloudSearch, and DynamoDB, optimizing resource usage by
+            <span className="font-bold text-white"> 20% </span>
+            while maintaining zero cost.
+          </>,
         ]}
-        companyUrl="https://seattlecentral.edu/"
         skills={[
           "EC2",
           "S3",
@@ -69,16 +100,23 @@ const Experience = () => {
           "CSS",
           "Node.js",
         ]}
+        initialSkillCount={5}
       />
       <ExperienceItem
         image={MocoLogo}
         position="Software Engineer Intern | Jun 2023 - Sep 2023"
         company="Mongol Content"
         description={[
-          "● Developed a mobile application for iOS, and Android using React Native.",
-          "● Converted the MPT Pay banking application from its native language to React Native, allowing the company to cut development costs by 50%.",
+          <>
+            ● Developed a mobile application for iOS, and Android using React
+            Native.
+          </>,
+          <>
+            ● Converted the MPT Pay banking application from its native language
+            to React Native, allowing the company to cut development costs by
+            <span className="font-bold text-white"> 50%.</span>
+          </>,
         ]}
-        companyUrl="https://www.mongolcontent.mn/"
         skills={[
           "JavaScript",
           "React Native",
@@ -90,6 +128,7 @@ const Experience = () => {
           "HTML",
           "CSS",
         ]}
+        initialSkillCount={4}
       />
       <ExperienceItem
         image={SteppelinkLogo}
@@ -99,7 +138,6 @@ const Experience = () => {
           "● Developed a mobile application for iOS, and Android using React Native.",
           "● Gained knowledge of React Native's lifecycle and hooks while creating pixel-perfect user interfaces.",
         ]}
-        companyUrl="https://www.steppeholding.mn/en"
         skills={[
           "JavaScript",
           "React Native",
@@ -109,6 +147,7 @@ const Experience = () => {
           "HTML",
           "CSS",
         ]}
+        initialSkillCount={4}
       />
     </div>
   );

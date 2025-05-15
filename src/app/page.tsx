@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Profile from "../../public/profile.jpeg";
 import GitHubCalendar from "react-github-calendar";
+import { AnimatedBeamCircle } from "@/Components/Home/CircleBeam";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
       <div className="w-full xl:max-w-3xl mt-8 text-white">
         <GitHubCalendar username="orchlonn" />
       </div>
+      <AnimatedBeamCircle />
     </div>
   );
 }

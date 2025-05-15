@@ -40,6 +40,7 @@ const Experience = () => {
           "HTML",
           "CSS",
         ]}
+        initialSkillCount={4}
       />
       <ExperienceItem
         image={Pypup}

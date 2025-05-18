@@ -4,7 +4,7 @@ import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 const Footer: React.FC = () => {
   return (
     <footer className="text-gray-300 mx-auto">
-      <div className="flex space-x-4 justify-center items-center my-3 mt-10">
+      <div className="flex space-x-4 justify-center items-center my-2 mt-10">
         {/* Social Media Icons */}
         <a
           href="https://github.com/orchlonn"

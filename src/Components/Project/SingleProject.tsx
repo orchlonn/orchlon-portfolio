@@ -1,30 +1,16 @@
-const SingleProject = ({
-  title,
-  description,
-  imageUrl,
-}: {
-  title: string;
-  description: string;
-  imageUrl: string;
-}) => {
+const SingleProject = () => {
   return (
-    <div className="xl:w-1/2 flex flex-col gap-4 xl:mt-0 mt-10">
-      <div>
-        <h2 className="text-3xl font-bold">{title}</h2>
-        <h2 className="text-l mt-1">{description}</h2>
+    <div className="flex flex-col gap-3 h-[25rem] w-1/5 bg-blue-300 rounded-[30px] p-5">
+      <div className="h-[12rem] w-full bg-white rounded-[27px]"></div>
+      <p className="text-2xl font-bold">
+        AI Nomad Navigator - AI Travel Assistant
+      </p>
+      <div className="flex gap-4 my-2">
+        <a className="border-2 border-teal-300 p-2 rounded-md px-4 py-2">
+          Github
+        </a>
+        <a className="bg-red-200 px-4 py-2 rounded-md">Live Demo</a>
       </div>
-      <video
-        autoPlay
-        muted
-        playsInline
-        loop
-        className="rounded-lg"
-        preload="https://media.geeksforgeeks.org/wp-content/cdn- 
-              uploads/20190710102234/download3.png"
-      >
-        <source src={imageUrl} />
-        Your browser does not support the video tag...
-      </video>
     </div>
   );
 };

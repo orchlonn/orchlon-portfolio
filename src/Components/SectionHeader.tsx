@@ -1,9 +1,9 @@
-const SectionHeader = ({ title }: { title: string }) => {
+const SectionHeader = ({ title, desc }: { title: string; desc: string }) => {
   return (
-    <h1 className="flex section-header text-2xl font-bold items-center">
-      /{title}
-      <span className="nav-indicator mr-4 h-[1px] w-32 bg-slate-600 transition-all ml-3"></span>
-    </h1>
+    <div className="flex flex-col gap-2 w-full text-center mt-10 mb-5">
+      <p className="text-gray-400 font-semibold text-sm">{desc}</p>
+      <p className="text-teal-300 text-xl	font-bold">{title}</p>
+    </div>
   );
 };
 

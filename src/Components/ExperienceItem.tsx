@@ -24,7 +24,7 @@ const ExperienceItem = ({
     : skills.slice(0, initialSkillCount);
 
   return (
-    <div className="flex flex-col gap-y-2 my-3 w-2/5 border-2 border-teal-300 rounded-3xl py-5 px-20 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_30px_rgba(20,184,166,0.3)] hover:border-teal-400 cursor-pointer">
+    <div className="flex flex-col gap-y-2 my-3 w-2/5 border border-teal-300 rounded-3xl py-5 px-20 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_30px_rgba(20,184,166,0.3)] hover:border-teal-400 cursor-pointer">
       <div className="flex justify-center items-center">
         <Image
           src={image}

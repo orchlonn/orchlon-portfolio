@@ -1,7 +1,20 @@
+import ResumeBox from "@/Components/Resume/ResumeBox";
+import SectionHeader from "@/Components/SectionHeader";
+
 const ProjectSection = () => {
   return (
-    <div className="text-slate-200">
-      <p>Resume Section</p>
+    <div className="">
+      <SectionHeader desc="My Resume and Cover Letter" title="CV & Resume" />
+      <div className="flex w-full justify-center gap-10">
+        <ResumeBox
+          description="A concise, one-page overview of my experience and skills."
+          title="Resume"
+        />
+        <ResumeBox
+          description="A concise, one-page overview of my experience and skills."
+          title="Cover Letter"
+        />
+      </div>
     </div>
   );
 };

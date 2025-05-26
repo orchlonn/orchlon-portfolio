@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col items-center mx-auto max-w-3xl">
-        <div className="flex h-[18rem] bg-[#F5F5F5] px-4 my-10 items-center rounded-lg">
+        <div className="flex h-[18rem] bg-slate-800 px-4 my-10 items-center rounded-lg text-slate-50 transition-all duration-500 ease-in-out hover:bg-transparent hover:border-slate-700 border border-transparent">
           <div className="mx-6">
             <Image
               src={Profile}

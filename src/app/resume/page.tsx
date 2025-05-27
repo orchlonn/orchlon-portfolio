@@ -1,3 +1,4 @@
+"use client";
 import SectionHeader from "@/Components/SectionHeader";
 import ResumeBox from "./Components/ResumeBox";
 
@@ -9,10 +10,12 @@ const ProjectSection = () => {
         <ResumeBox
           description="A concise, one-page overview of my experience and skills."
           title="Resume"
+          onPress={() => window.open("/resume.pdf", "_blank")}
         />
         <ResumeBox
           description="A concise, one-page overview of my experience and skills."
           title="Cover Letter"
+          onPress={() => window.open("/cv.pdf", "_blank")}
         />
       </div>
     </div>

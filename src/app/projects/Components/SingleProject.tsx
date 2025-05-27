@@ -1,4 +1,4 @@
-import BorderButton from "../BorderButton";
+import BorderButton from "@/Components/BorderButton";
 
 const SingleProject = ({ title }: { title: string }) => {
   return (

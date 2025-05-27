@@ -1,5 +1,5 @@
 import SectionHeader from "@/Components/SectionHeader";
-import SingleProject from "@/Components/Project/SingleProject";
+import SingleProject from "./Components/SingleProject";
 
 const ProjectSection = () => {
   return (

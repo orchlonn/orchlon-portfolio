@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Profile from "../../public/profile.jpeg";
 import GitHubCalendar from "react-github-calendar";
-import { AnimatedBeamCircle } from "@/Components/Home/CircleBeam";
+import { AnimatedBeamCircle } from "@/Components/About/CircleBeam";
 
 export default function Home() {
   return (

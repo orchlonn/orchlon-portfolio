@@ -1,5 +1,5 @@
-import ResumeBox from "@/Components/Resume/ResumeBox";
 import SectionHeader from "@/Components/SectionHeader";
+import ResumeBox from "./Components/ResumeBox";
 
 const ProjectSection = () => {
   return (

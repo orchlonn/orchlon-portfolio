@@ -1,10 +1,10 @@
-import ExperienceItem from "@/Components/ExperienceItem";
 import Pypup from "../../../public/pypup_logo.webp";
 import MocoLogo from "../../../public/moco_logo.jpeg";
 import SteppelinkLogo from "../../../public/steppelink_logo.webp";
 import SCCLogo from "../../../public/SCC_logo.png";
 import CWULogo from "../../../public/CWU_logo.png";
 import SectionHeader from "@/Components/SectionHeader";
+import ExperienceItem from "./Components/ExperienceItem";
 
 const Experience = () => {
   return (

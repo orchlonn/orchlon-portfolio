@@ -20,31 +20,33 @@ const Experience = () => {
           company="Central Washington University"
           description={[
             <>
-              ● Implemented a flash-card feature for the platform, utilizing
-              Angular and Tailwind CSS for the front end and NestJS for the back
-              end, resulting in a
-              <span className="font-bold text-white"> 30%</span> boost in
-              website traffic and attracting approximately
-              <span className="font-bold text-white"> 1500</span> daily users.
+              ● Conducted in-depth SQL Injection testing in a controlled test
+              environment using SQLMap and custom payloads, uncovering{" "}
+              <span className="font-bold text-white"> 20 </span>
+              critical vulnerabilities in a web-based financial application and
+              guiding patch deployments that reduced potential breach risk by
+              <span className="font-bold text-white"> 90%. </span>
             </>,
             <>
-              ● Developed and consistently updated comprehensive technical
-              documentation for both frontend and backend components, leading to
-              a<span className="font-bold text-white"> 20%</span> reduction in
-              troubleshooting time and a{" "}
-              <span className="font-bold text-white"> 15%</span> increase in
-              onboarding efficiency for new team members.
+              ● Conducted network reconnaissance and port scanning in a
+              virtualized test environment with Nmap and Zenmap across{" "}
+              <span className="font-bold text-white"> 100+ </span>
+              hosts, mapping <span className="font-bold text-white"> 250 </span>
+              open ports and service configurations—resulting in tightened
+              firewall rules and a{" "}
+              <span className="font-bold text-white"> 70% </span> reduction in
+              exposed attack surface.
             </>,
           ]}
           skills={[
-            "TypeScript",
-            "Angular",
+            "Higher Education Research",
+            "Cybersecurity",
+            "Software Infrastructure",
             "MySQL",
-            "NestJS",
-            "Tailwind",
-            "Daisy UI",
-            "HTML",
-            "CSS",
+            "SQL Injection",
+            "Script Injection",
+            "Penetration Testing",
+            "Port Scanning",
           ]}
           initialSkillCount={4}
         />

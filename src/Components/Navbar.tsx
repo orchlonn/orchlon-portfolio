@@ -1,9 +1,30 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const getInitialSection = (path: string) => {
+  switch (path) {
+    case "/":
+      return 0;
+    case "/resume":
+      return 1;
+    case "/projects":
+      return 2;
+    case "/experience":
+      return 3;
+    default:
+      return 0;
+  }
+};
 
 const Navbar = () => {
-  const [section, setSection] = useState(0);
+  const pathname = usePathname();
+  const [section, setSection] = useState(getInitialSection(pathname));
+
+  useEffect(() => {
+    setSection(getInitialSection(pathname));
+  }, [pathname]);
 
   return (
     <nav className="bg-gray-800 text-white">

@@ -47,15 +47,14 @@ const Navbar = () => {
                   onClick={() => setSection(idx)}
                   className="relative px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
                 >
-                  {/* Sliding background highlight */}
                   {section === idx && (
                     <motion.span
                       layoutId="navHighlight"
                       className="absolute inset-0 bg-gray-700 rounded-md"
                       transition={{
                         type: "spring",
-                        stiffness: 200,
-                        damping: 25,
+                        stiffness: 100,
+                        damping: 15,
                       }}
                     />
                   )}

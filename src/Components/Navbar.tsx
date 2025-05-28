@@ -2,6 +2,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion, LayoutGroup } from "framer-motion";
+
+const navItems = [
+  { label: "About", href: "/" },
+  { label: "CV & Resume", href: "/resume" },
+  { label: "Projects", href: "/projects" },
+  { label: "Experience", href: "/experience" },
+];
 
 const getInitialSection = (path: string) => {
   switch (path) {
@@ -30,44 +38,41 @@ const Navbar = () => {
     <nav className="bg-gray-800 text-white">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center h-16 items-center">
-          <div className="flex space-x-4">
-            <Link
-              href="./"
-              onClick={() => setSection(0)}
-              className={`${
-                section === 0 ? "bg-gray-700 text-white" : "text-gray-400"
-              } hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer`}
-            >
-              About
-            </Link>
-            <Link
-              href="/resume"
-              onClick={() => setSection(1)}
-              className={`${
-                section === 1 ? "bg-gray-700 text-white" : "text-gray-400"
-              } hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer`}
-            >
-              CV & Resume
-            </Link>
-            <Link
-              href="/projects"
-              onClick={() => setSection(2)}
-              className={`${
-                section === 2 ? "bg-gray-700 text-white" : "text-gray-400"
-              } hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer`}
-            >
-              Projects
-            </Link>
-            <Link
-              onClick={() => setSection(3)}
-              href="/experience"
-              className={`${
-                section === 3 ? "bg-gray-700 text-white" : "text-gray-400"
-              } hover:text-white px-3 py-2 rounded-md text-sm font-medium cursor-pointer`}
-            >
-              Experience
-            </Link>
-          </div>
+          <LayoutGroup>
+            <div className="flex space-x-4 relative">
+              {navItems.map((item, idx) => (
+                <Link
+                  href={item.href}
+                  key={idx}
+                  onClick={() => setSection(idx)}
+                  className="relative px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
+                >
+                  {/* Sliding background highlight */}
+                  {section === idx && (
+                    <motion.span
+                      layoutId="navHighlight"
+                      className="absolute inset-0 bg-gray-700 rounded-md"
+                      transition={{
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 25,
+                      }}
+                    />
+                  )}
+
+                  <span
+                    className={
+                      section === idx
+                        ? "relative text-white"
+                        : "relative text-gray-400 hover:text-white"
+                    }
+                  >
+                    {item.label}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </LayoutGroup>
         </div>
       </div>
     </nav>

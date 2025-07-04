@@ -4,18 +4,22 @@ import ResumeBox from "./Components/ResumeBox";
 
 const ProjectSection = () => {
   return (
-    <div className="">
-      <SectionHeader desc="My Resume and Cover Letter" title="CV & Resume" />
+    <div className="animate-fade-in">
+      <div className="animate-slide-up">
+        <SectionHeader desc="My Resume and Cover Letter" title="CV & Resume" />
+      </div>
       <div className="flex w-full justify-center gap-10">
         <ResumeBox
           description="A concise, one-page overview of my experience and skills."
           title="Resume"
           onPress={() => window.open("/resume.pdf", "_blank")}
+          className="animate-scale-in"
         />
         <ResumeBox
           description="A concise, one-page overview of my experience and skills."
           title="Cover Letter"
           onPress={() => window.open("/cv.pdf", "_blank")}
+          className="animate-scale-in-delay"
         />
       </div>
     </div>

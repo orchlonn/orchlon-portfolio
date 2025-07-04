@@ -8,14 +8,14 @@ import ExperienceItem from "./Components/ExperienceItem";
 
 const Experience = () => {
   return (
-    <div className="animate-fade-in">
+    <div className="animate-fade-in px-4 sm:px-6 lg:px-8">
       <div className="animate-slide-up">
         <SectionHeader
           desc="My personal & professional development"
           title="Work & Research"
         />
       </div>
-      <div className="flex flex-col items-center gap-y-3">
+      <div className="flex flex-col items-center gap-y-3 sm:gap-y-4 mt-6 sm:mt-8">
         <ExperienceItem
           image={CWULogo}
           position="Undergraduate Researcher | Apr 2025 - Present"
@@ -51,7 +51,7 @@ const Experience = () => {
             "Port Scanning",
           ]}
           initialSkillCount={4}
-          className="animate-scale-in"
+          className="animate-scale-in w-full sm:w-4/5 lg:w-2/5"
         />
         <ExperienceItem
           image={Pypup}
@@ -85,7 +85,7 @@ const Experience = () => {
             "HTML",
             "CSS",
           ]}
-          className="animate-scale-in-delay"
+          className="animate-scale-in-delay w-full sm:w-4/5 lg:w-2/5"
         />
         <ExperienceItem
           image={SCCLogo}
@@ -114,7 +114,7 @@ const Experience = () => {
             "Node.js",
           ]}
           initialSkillCount={5}
-          className="animate-fade-in-delay"
+          className="animate-fade-in-delay w-full sm:w-4/5 lg:w-2/5"
         />
         <ExperienceItem
           image={MocoLogo}
@@ -144,7 +144,7 @@ const Experience = () => {
             "CSS",
           ]}
           initialSkillCount={4}
-          className="animate-slide-up-delay"
+          className="animate-slide-up-delay w-full sm:w-4/5 lg:w-2/5"
         />
         <ExperienceItem
           image={SteppelinkLogo}
@@ -164,7 +164,7 @@ const Experience = () => {
             "CSS",
           ]}
           initialSkillCount={4}
-          className="animate-fade-in-delay-2"
+          className="animate-fade-in-delay-2 w-full sm:w-4/5 lg:w-2/5"
         />
       </div>
     </div>

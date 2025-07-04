@@ -16,9 +16,9 @@ const SingleProject = ({
 }) => {
   return (
     <div
-      className={`flex flex-col gap-3 h-[25rem] w-1/5 bg-slate-800 rounded-[30px] p-5 transition-all duration-500 ease-in-out hover:bg-transparent hover:border-slate-700 border border-transparent ${className}`}
+      className={`flex flex-col gap-2 sm:gap-3 h-auto sm:h-[25rem] bg-slate-800 rounded-[30px] p-3 sm:p-5 transition-all duration-500 ease-in-out hover:bg-transparent hover:border-slate-700 border border-transparent ${className}`}
     >
-      <div className="h-[12rem] w-full relative rounded-[27px] overflow-hidden">
+      <div className="h-32 sm:h-48 md:h-[12rem] w-full relative rounded-[27px] overflow-hidden">
         <Image
           src={image}
           fill
@@ -26,13 +26,15 @@ const SingleProject = ({
           alt="Logo of the project"
         />
       </div>
-      <p className="text-2xl font-bold text-slate-50">{title}</p>
-      <div className="flex gap-4 my-2">
+      <p className="text-lg sm:text-xl md:text-2xl font-bold text-slate-50 text-center">
+        {title}
+      </p>
+      <div className="flex gap-2 sm:gap-4 my-2">
         <BorderButton buttonTitle="Github" link={githubLink} />
         <a
           href={demoLink}
           target="_blank"
-          className="bg-teal-300 text-black px-4 py-2 rounded-md hover:bg-[#F5F5F5] transition-[background-color,color] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] transform cursor-pointer"
+          className="bg-teal-300 text-black px-3 sm:px-4 py-2 rounded-md hover:bg-[#F5F5F5] transition-[background-color,color] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] transform cursor-pointer text-center text-sm sm:text-base"
         >
           Live Demo
         </a>

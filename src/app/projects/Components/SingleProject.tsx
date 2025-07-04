@@ -6,14 +6,18 @@ const SingleProject = ({
   image,
   demoLink,
   githubLink,
+  className = "",
 }: {
   title: string;
   image: StaticImageData | string;
   demoLink: string;
   githubLink: string;
+  className?: string;
 }) => {
   return (
-    <div className="flex flex-col gap-3 h-[25rem] w-1/5 bg-slate-800 rounded-[30px] p-5 transition-all duration-500 ease-in-out hover:bg-transparent hover:border-slate-700 border border-transparent">
+    <div
+      className={`flex flex-col gap-3 h-[25rem] w-1/5 bg-slate-800 rounded-[30px] p-5 transition-all duration-500 ease-in-out hover:bg-transparent hover:border-slate-700 border border-transparent ${className}`}
+    >
       <div className="h-[12rem] w-full relative rounded-[27px] overflow-hidden">
         <Image
           src={image}

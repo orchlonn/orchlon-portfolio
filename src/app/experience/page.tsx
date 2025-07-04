@@ -8,11 +8,13 @@ import ExperienceItem from "./Components/ExperienceItem";
 
 const Experience = () => {
   return (
-    <div>
-      <SectionHeader
-        desc="My personal & professional development"
-        title="Work & Research"
-      />
+    <div className="animate-fade-in">
+      <div className="animate-slide-up">
+        <SectionHeader
+          desc="My personal & professional development"
+          title="Work & Research"
+        />
+      </div>
       <div className="flex flex-col items-center gap-y-3">
         <ExperienceItem
           image={CWULogo}
@@ -49,6 +51,7 @@ const Experience = () => {
             "Port Scanning",
           ]}
           initialSkillCount={4}
+          className="animate-scale-in"
         />
         <ExperienceItem
           image={Pypup}
@@ -82,6 +85,7 @@ const Experience = () => {
             "HTML",
             "CSS",
           ]}
+          className="animate-scale-in-delay"
         />
         <ExperienceItem
           image={SCCLogo}
@@ -110,6 +114,7 @@ const Experience = () => {
             "Node.js",
           ]}
           initialSkillCount={5}
+          className="animate-fade-in-delay"
         />
         <ExperienceItem
           image={MocoLogo}
@@ -139,6 +144,7 @@ const Experience = () => {
             "CSS",
           ]}
           initialSkillCount={4}
+          className="animate-slide-up-delay"
         />
         <ExperienceItem
           image={SteppelinkLogo}
@@ -158,6 +164,7 @@ const Experience = () => {
             "CSS",
           ]}
           initialSkillCount={4}
+          className="animate-fade-in-delay-2"
         />
       </div>
     </div>

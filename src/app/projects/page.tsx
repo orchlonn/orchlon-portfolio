@@ -6,26 +6,31 @@ import LogisticCompanyLogo from "../../../public/logistic_company_logo.png";
 
 const ProjectSection = () => {
   return (
-    <div className="flex flex-col gap-10 text-slate-200">
-      <SectionHeader desc="My Recent Projects" title="Portfolio" />
+    <div className="flex flex-col gap-10 text-slate-200 animate-fade-in">
+      <div className="animate-slide-up">
+        <SectionHeader desc="My Recent Projects" title="Portfolio" />
+      </div>
       <div className="flex items-center justify-center gap-10">
         <SingleProject
           title="Bizzzy - Handy human helps you"
           image={BizzzyLogo}
           githubLink="https://github.com/Bizzzy-software"
           demoLink="https://drive.google.com/file/d/1wuJXLsGQBIHQUbkEfV9y3TfLk_BmVOU-/view?usp=sharing"
+          className="animate-scale-in"
         />
         <SingleProject
           title="Sorting Application - VR Sorting algorithms"
           image={SortingAppLogo}
           demoLink=""
           githubLink="https://github.com/CS-466-group-4/VR-Sorting-app"
+          className="animate-scale-in-delay"
         />
         <SingleProject
           title="Landing page - Logistic Company Website"
           image={LogisticCompanyLogo}
           demoLink="https://andjintrans.vercel.app/"
           githubLink="https://github.com/orchlonn/Andjintrans"
+          className="animate-fade-in-delay"
         />
       </div>
     </div>

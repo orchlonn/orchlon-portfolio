@@ -7,9 +7,9 @@ import { AnimatedBeamCircle } from "@/Components/About/CircleBeam";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col items-center mx-auto max-w-3xl">
-        <div className="flex h-[18rem] bg-slate-800 px-4 my-10 items-center rounded-lg text-slate-50 transition-all duration-500 ease-in-out hover:bg-transparent hover:border-slate-700 border border-transparent">
-          <div className="mx-6">
+      <div className="flex flex-col items-center mx-auto max-w-3xl animate-fade-in">
+        <div className="flex h-[18rem] bg-slate-800 px-4 my-10 items-center rounded-lg text-slate-50 transition-all duration-500 ease-in-out hover:bg-transparent hover:border-slate-700 border border-transparent animate-slide-up">
+          <div className="mx-6 animate-scale-in">
             <Image
               src={Profile}
               width={1000}
@@ -18,7 +18,7 @@ export default function Home() {
               className="rounded-full"
             />
           </div>
-          <div className="">
+          <div className="animate-fade-in-delay">
             <h1 className="text-2xl font-bold mb-2">About Me</h1>
             <p>
               Hi, I&apos;m Oscar—a passionate software developer driven by
@@ -32,7 +32,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="text-white text-center mt-10">
+        <div className="text-white text-center mt-10 animate-slide-up-delay">
           <p className="text-3xl font-bold mb-4">My Skills</p>
           <p>
             With experience in full-stack development, I&apos;ve built
@@ -43,9 +43,13 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <AnimatedBeamCircle />
-      <div className="flex flex-col items-center mx-auto w-full mt-8 text-white">
-        <GitHubCalendar username="orchlonn" />
+      <div className="animate-rotate-in">
+        <AnimatedBeamCircle />
+      </div>
+      <div className="flex flex-col items-center mx-auto w-full mt-8 text-white animate-fade-in-delay-2">
+        <div className="animate-bounce-in">
+          <GitHubCalendar username="orchlonn" />
+        </div>
       </div>
     </>
   );

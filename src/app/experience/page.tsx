@@ -51,7 +51,7 @@ const Experience = () => {
             "Port Scanning",
           ]}
           initialSkillCount={4}
-          className="animate-scale-in w-full sm:w-4/5 lg:w-2/5"
+          className="animate-slide-in-delay w-full sm:w-4/5 lg:w-2/5"
         />
         <ExperienceItem
           image={Pypup}
@@ -85,7 +85,7 @@ const Experience = () => {
             "HTML",
             "CSS",
           ]}
-          className="animate-scale-in-delay w-full sm:w-4/5 lg:w-2/5"
+          className="animate-slide-in-delay w-full sm:w-4/5 lg:w-2/5"
         />
         <ExperienceItem
           image={SCCLogo}
@@ -144,7 +144,7 @@ const Experience = () => {
             "CSS",
           ]}
           initialSkillCount={4}
-          className="animate-slide-up-delay w-full sm:w-4/5 lg:w-2/5"
+          className="animate-slide-in-delay w-full sm:w-4/5 lg:w-2/5"
         />
         <ExperienceItem
           image={SteppelinkLogo}

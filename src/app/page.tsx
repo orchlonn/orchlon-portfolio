@@ -7,7 +7,7 @@ import { AnimatedBeamCircle } from "@/Components/About/CircleBeam";
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col items-center mx-auto max-w-3xl  animate-fade-in">
+      <div className="flex flex-col items-center mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 animate-fade-in">
         <div className="flex flex-col sm:flex-row h-auto sm:h-[18rem] bg-slate-800 px-4 sm:px-6 my-6 sm:my-10 items-center rounded-lg text-slate-50 transition-all duration-500 ease-in-out hover:bg-transparent hover:border-slate-700 border border-transparent animate-slide-up">
           <div className="mx-4 sm:mx-6 mb-4 sm:mb-0 animate-scale-in">
             <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden">
@@ -45,7 +45,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div className="animate-rotate-in">
+      <div className="animate-fade-in-delay-2">
         <AnimatedBeamCircle />
       </div>
       {/* <div className="flex flex-col items-center mx-auto w-full mt-4 sm:mt-6 lg:mt-8 text-white px-4 sm:px-6 lg:px-8 animate-fade-in-delay-2">

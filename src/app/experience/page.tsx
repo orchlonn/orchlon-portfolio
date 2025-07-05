@@ -1,7 +1,6 @@
 import Pypup from "../../../public/pypup_logo.webp";
 import MocoLogo from "../../../public/moco_logo.jpeg";
 import SteppelinkLogo from "../../../public/steppelink_logo.webp";
-import SCCLogo from "../../../public/SCC_logo.png";
 import CWULogo from "../../../public/CWU_logo.png";
 import SectionHeader from "@/Components/SectionHeader";
 import ExperienceItem from "./Components/ExperienceItem";
@@ -86,35 +85,6 @@ const Experience = () => {
             "CSS",
           ]}
           className="animate-slide-in-delay w-full sm:w-4/5 lg:w-2/5"
-        />
-        <ExperienceItem
-          image={SCCLogo}
-          position="Cloud Research Assistant | May 2023- Feb 2024"
-          company="Seattle Central College"
-          description={[
-            <>
-              ● Leveraged AWS educational platform to evaluate cost and
-              performance metrics for small e-commerce businesses using EC2,
-              VPS, S3, CloudSearch, and DynamoDB, optimizing resource usage by
-              <span className="font-bold text-white"> 20% </span>
-              while maintaining zero cost.
-            </>,
-          ]}
-          skills={[
-            "EC2",
-            "S3",
-            "VPC",
-            "DynamoDB",
-            "AWS Lambda",
-            "CloudSearch",
-            "TypeScript",
-            "React",
-            "HTML",
-            "CSS",
-            "Node.js",
-          ]}
-          initialSkillCount={5}
-          className="animate-fade-in-delay w-full sm:w-4/5 lg:w-2/5"
         />
         <ExperienceItem
           image={MocoLogo}

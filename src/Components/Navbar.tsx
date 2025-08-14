@@ -64,14 +64,14 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 text-white relative">
       <div className="px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="relative flex h-16 items-center">
           <Link
             href="/"
-            className="text-white font-semibold text-lg tracking-tight"
+            className="sm:hidden text-white font-semibold text-lg tracking-tight"
           >
             Oscar
           </Link>
-          <div className="hidden sm:flex flex-1">
+          <div className="hidden sm:flex absolute left-1/2 -translate-x-1/2">
             <LayoutGroup>
               <div className="flex justify-center space-x-4 relative">
                 {navItems.map((item, idx) => (
@@ -107,7 +107,7 @@ const Navbar = () => {
             </LayoutGroup>
           </div>
 
-          <div className="flex sm:hidden justify-end">
+          <div className="flex sm:hidden ml-auto justify-end">
             <motion.button
               type="button"
               aria-label="Toggle menu"

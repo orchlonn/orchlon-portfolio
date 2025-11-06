@@ -18,7 +18,16 @@ const ProjectSection = () => {
           title="Invest App — Smart Trading"
           image={InvestAppLogo}
           description="AI-powered trading assistant with real-time signals, watchlists, and multi-exchange support."
-          tags={["Next.js", "TypeScript", "iOS", "Android"]}
+          tags={[
+            "React Native",
+            "TypeScript",
+            "iOS",
+            "Android",
+            "Expo",
+            "OpenAI",
+            "Cloud Messaging",
+            "Firebase",
+          ]}
           appStoreLink="https://apps.apple.com/us/app/invest-ai-smart-trading/id6752223346"
           playStoreLink="https://apps.apple.com/us/app/invest-ai-smart-trading/id6752223346"
           featured
@@ -29,7 +38,7 @@ const ProjectSection = () => {
           title="Gobicraft — 3D Sandbox"
           image={GobicraftLogo}
           description="Voxel-based sandbox with building, terrain exploration, and interactive physics."
-          tags={["Three.js", "WebGL", "Vite"]}
+          tags={["Three.js", "WebGL", "Vercel", "React", "TypeScript"]}
           githubLink="https://github.com/orchlonn/gobicraft"
           demoLink="https://gobicraft.vercel.app/"
           className="animate-scale-in-delay"
@@ -39,10 +48,17 @@ const ProjectSection = () => {
           title="Bizzzy — Gig Economy"
           image={BizzzyLogo}
           description="Marketplace for on-demand services with escrow, reviews, and job tracking."
-          tags={["React Native", "Node.js"]}
+          tags={[
+            "React Native",
+            "Node.js",
+            "Expo",
+            "Firebase",
+            "React",
+            "TypeScript",
+          ]}
           githubLink="https://github.com/Bizzzy-software"
           demoLink="https://drive.google.com/file/d/1wuJXLsGQBIHQUbkEfV9y3TfLk_BmVOU-/view?usp=sharing"
-          className="animate-scale-in-delay"
+          className="animate-scale-in-delay-2"
         />
 
         <ProjectCard
@@ -51,14 +67,14 @@ const ProjectSection = () => {
           description="Immersive visualization of classic sorting algorithms in VR."
           tags={["Unity", "C#", "VR"]}
           githubLink="https://github.com/CS-466-group-4/VR-Sorting-app"
-          className="animate-fade-in-delay"
+          className="animate-fade-in-delay-2"
         />
 
         <ProjectCard
           title="Logistics Landing Page"
           image={LogisticCompanyLogo}
           description="High-converting landing page for a logistics company with modern branding."
-          tags={["Next.js", "Tailwind"]}
+          tags={["Next.js", "Tailwind", "Vercel", "React", "TypeScript"]}
           demoLink="https://andjintrans.vercel.app/"
           githubLink="https://github.com/orchlonn/Andjintrans"
           className="animate-fade-in-delay-2"

@@ -2,6 +2,7 @@ import Pypup from "../../../public/pypup_logo.webp";
 import MocoLogo from "../../../public/moco_logo.jpeg";
 import SteppelinkLogo from "../../../public/steppelink_logo.webp";
 import CWULogo from "../../../public/CWU_logo.png";
+import GobicraftLogo from "../../../public/gobicraft.jpeg";
 import SectionHeader from "@/Components/SectionHeader";
 import ExperienceItem from "./Components/ExperienceItem";
 
@@ -16,8 +17,49 @@ const Experience = () => {
       </div>
       <div className="flex flex-col items-center gap-y-3 sm:gap-y-4 mt-6 sm:mt-8">
         <ExperienceItem
+          image={GobicraftLogo}
+          position="AI software engineer Co-Op | Sep 2025 - Dec 2025"
+          company="Gobicraft"
+          description={[
+            <>
+              ● Developed an interactive{" "}
+              <span className="font-bold text-white">
+                3D visualization system
+              </span>
+              using <span className="font-bold text-white">Three.js </span>,
+              generating and rendering{" "}
+              <span className="font-bold text-white">
+                3D matrices and shapes
+              </span>{" "}
+              with dynamic real-time updates.
+            </>,
+            <>
+              ● Integrated{" "}
+              <span className="font-bold text-white">Generative AI</span> to
+              automatically modify and extend the
+              <span className="font-bold text-white"> 3D codebase</span>,
+              allowing AI-driven creation and transformation of shapes within
+              the scene.
+            </>,
+          ]}
+          skills={[
+            "Three.js",
+            "Generative AI",
+            "TypeScript",
+            "React",
+            "Node.js",
+            "Express.js",
+            "Python",
+            "PyTorch",
+            "TensorFlow",
+            "OpenAI",
+          ]}
+          initialSkillCount={4}
+          className="animate-slide-in-delay w-full sm:w-4/5 lg:w-2/5"
+        />
+        <ExperienceItem
           image={CWULogo}
-          position="Undergraduate Researcher | Apr 2025 - Present"
+          position="Undergraduate Researcher | Apr 2025 - Jun 2025"
           company="Central Washington University"
           description={[
             <>

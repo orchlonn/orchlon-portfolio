@@ -1,42 +1,64 @@
 import SectionHeader from "@/Components/SectionHeader";
-import SingleProject from "./Components/SingleProject";
+import ProjectCard from "./Components/ProjectCard";
 import BizzzyLogo from "../../../public/Bizzzy_logo.png";
 import SortingAppLogo from "../../../public/sorting_app_logo.png";
 import LogisticCompanyLogo from "../../../public/logistic_company_logo.png";
-import AppStoreProject from "./Components/AppStoreProject";
+import GobicraftLogo from "../../../public/gobicraft.jpeg";
 import InvestAppLogo from "../../../public/invest_ai_logo.png";
 
 const ProjectSection = () => {
   return (
     <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10 text-slate-200 px-4 sm:px-6 lg:px-8">
       <div className="animate-slide-up">
-        <SectionHeader desc="My Recent Projects" title="Portfolio" />
+        <SectionHeader desc="Selected Work" title="Projects" />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
-        <AppStoreProject
-          title="Invest App - Smarat Trading"
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+        <ProjectCard
+          title="Invest App — Smart Trading"
           image={InvestAppLogo}
+          description="AI-powered trading assistant with real-time signals, watchlists, and multi-exchange support."
+          tags={["Next.js", "TypeScript", "iOS", "Android"]}
           appStoreLink="https://apps.apple.com/us/app/invest-ai-smart-trading/id6752223346"
           playStoreLink="https://apps.apple.com/us/app/invest-ai-smart-trading/id6752223346"
-          className="animate-scale-in"
+          featured
+          className="animate-scale-in md:col-span-2 xl:col-span-3"
         />
-        <SingleProject
-          title="Bizzzy - Gig economy app"
+
+        <ProjectCard
+          title="Gobicraft — 3D Sandbox"
+          image={GobicraftLogo}
+          description="Voxel-based sandbox with building, terrain exploration, and interactive physics."
+          tags={["Three.js", "WebGL", "Vite"]}
+          githubLink="https://github.com/orchlonn/gobicraft"
+          demoLink="https://gobicraft.vercel.app/"
+          className="animate-scale-in-delay"
+        />
+
+        <ProjectCard
+          title="Bizzzy — Gig Economy"
           image={BizzzyLogo}
+          description="Marketplace for on-demand services with escrow, reviews, and job tracking."
+          tags={["React Native", "Node.js"]}
           githubLink="https://github.com/Bizzzy-software"
           demoLink="https://drive.google.com/file/d/1wuJXLsGQBIHQUbkEfV9y3TfLk_BmVOU-/view?usp=sharing"
           className="animate-scale-in-delay"
         />
-        <SingleProject
-          title="VR Sorting Algorithms app"
+
+        <ProjectCard
+          title="VR Sorting Algorithms"
           image={SortingAppLogo}
-          demoLink=""
+          description="Immersive visualization of classic sorting algorithms in VR."
+          tags={["Unity", "C#", "VR"]}
           githubLink="https://github.com/CS-466-group-4/VR-Sorting-app"
           className="animate-fade-in-delay"
         />
-        <SingleProject
-          title="Logistic Company Landing Page"
+
+        <ProjectCard
+          title="Logistics Landing Page"
           image={LogisticCompanyLogo}
+          description="High-converting landing page for a logistics company with modern branding."
+          tags={["Next.js", "Tailwind"]}
           demoLink="https://andjintrans.vercel.app/"
           githubLink="https://github.com/orchlonn/Andjintrans"
           className="animate-fade-in-delay-2"

@@ -15,7 +15,7 @@ const ProjectSection = () => {
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
         <ProjectCard
-          title="Invest App — Smart Trading"
+          title="Invest AI"
           image={InvestAppLogo}
           description="AI-powered trading assistant with real-time signals, watchlists, and multi-exchange support."
           tags={[
@@ -25,13 +25,15 @@ const ProjectSection = () => {
             "Android",
             "Expo",
             "OpenAI",
-            "Cloud Messaging",
+            "AI Chatbot",
+            "Large Language Model API",
+            "Cloud Messaging API",
             "Firebase",
+            "Google Cloud Platform",
           ]}
           appStoreLink="https://apps.apple.com/us/app/invest-ai-smart-trading/id6752223346"
           playStoreLink="https://apps.apple.com/us/app/invest-ai-smart-trading/id6752223346"
-          featured
-          className="animate-scale-in md:col-span-2 xl:col-span-3"
+          className="animate-scale-in"
         />
 
         <ProjectCard
@@ -58,7 +60,7 @@ const ProjectSection = () => {
           ]}
           githubLink="https://github.com/Bizzzy-software"
           demoLink="https://drive.google.com/file/d/1wuJXLsGQBIHQUbkEfV9y3TfLk_BmVOU-/view?usp=sharing"
-          className="animate-scale-in-delay-2"
+          className="animate-scale-in"
         />
 
         <ProjectCard

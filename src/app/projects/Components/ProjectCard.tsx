@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import clsx from "clsx";
 
@@ -142,18 +145,36 @@ const ProjectCard = ({
           </p>
         )}
 
-        {tags.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-2 py-1 text-xs rounded-full bg-slate-800 text-slate-300 border border-slate-700"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
+        {tags.length > 0 &&
+          (() => {
+            const [showAllTags, setShowAllTags] = useState(false);
+            const visibleTags = showAllTags ? tags : tags.slice(0, 3);
+            const hasOverflow = tags.length > 3;
+            return (
+              <div className="flex flex-wrap gap-2">
+                {visibleTags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2 py-1 text-xs rounded-full bg-slate-800 text-slate-300 border border-slate-700"
+                  >
+                    {tag}
+                  </span>
+                ))}
+                {hasOverflow && (
+                  <button
+                    type="button"
+                    onClick={() => setShowAllTags((v) => !v)}
+                    className="px-2 py-1 text-xs rounded-full bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700 transition-colors"
+                    aria-expanded={showAllTags}
+                  >
+                    {showAllTags
+                      ? "See less"
+                      : `See more (+${tags.length - 3})`}
+                  </button>
+                )}
+              </div>
+            );
+          })()}
 
         <div className="mt-1 flex flex-wrap gap-2">
           {githubLink && (

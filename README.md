@@ -17,18 +17,21 @@ A minimal, responsive portfolio website built with modern web technologies..
 
 - Mobile-first approach
 - Adaptive layouts
+- Animation
 
 ### Sections
 
-- **About** - Introduction
+- **About**
+  - Introduction
 
-  - Resume
-  - Contributions on Github
+- **CV & Resume**
+  - CV & Resume files
 
 - **Experience**
-
   - Summer internships
-  - Cloud Research
+  - AI/ML Research
 
-- **Projects** - Side Projects
-  - Demonstration videos
+- **Projects**
+  - Side Projects
+  - Demonstration links & github
+  - App/Google Play Store links

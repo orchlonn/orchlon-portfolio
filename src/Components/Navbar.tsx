@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion, LayoutGroup, AnimatePresence } from "framer-motion";
-import { useNavbar } from "../../hooks/useNavbar";
+import { useNavbar } from "../hooks/useNavbar";
 
 const navItems = [
   { id: "about", label: "About", href: "#about" },

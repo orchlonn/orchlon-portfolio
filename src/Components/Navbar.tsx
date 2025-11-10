@@ -38,9 +38,13 @@ const Navbar = () => {
     useNavbar(navItems);
 
   return (
-    <nav className="fixed top-4 left-0 right-0 z-50">
-      <div className="px-0 max-w-lg mx-auto bg-gray-800/80 backdrop-blur supports-[backdrop-filter]:bg-gray-800/60 text-white border border-gray-700/50 rounded-xl shadow-md">
-        <div className="relative flex h-16 items-center">
+    <nav className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-0">
+      <div
+        className={`max-w-lg mx-auto bg-gray-800/80 backdrop-blur supports-[backdrop-filter]:bg-gray-800/60 text-white border border-gray-700/50 shadow-md transition-all duration-200 ${
+          isOpen ? "rounded-t-xl sm:rounded-xl" : "rounded-xl"
+        }`}
+      >
+        <div className="relative flex h-16 items-center px-4 sm:px-0">
           <Link
             href="#about"
             className="sm:hidden text-white font-semibold text-lg tracking-tight"
@@ -142,13 +146,13 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             key="mobileMenu"
-            className="sm:hidden absolute top-16 left-0 right-0 bg-gray-800/95 border-t border-gray-700 shadow-lg z-50 overflow-hidden"
+            className="sm:hidden absolute top-16 left-4 right-4 bg-gray-800/95 border border-t-0 border-gray-700/50 shadow-lg z-50 overflow-hidden rounded-b-xl backdrop-blur"
             initial="hidden"
             animate="show"
             exit="exit"
             variants={mobileMenuVariants}
           >
-            <div className="px-0 py-3 space-y-1">
+            <div className="px-4 py-3 space-y-1">
               {navItems.map((item) => (
                 <motion.div key={item.id} variants={mobileMenuItemVariants}>
                   <Link
@@ -160,8 +164,8 @@ const Navbar = () => {
                     }}
                     className={
                       activeId === item.id
-                        ? "block px-0 py-2 rounded-md text-base font-medium bg-gray-700 text-white"
-                        : "block px-0 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                        ? "block px-4 py-2 rounded-md text-base font-medium bg-gray-700 text-white"
+                        : "block px-4 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                     }
                   >
                     {item.label}

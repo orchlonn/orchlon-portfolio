@@ -1,30 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { motion, LayoutGroup, AnimatePresence } from "framer-motion";
+import { useNavbar } from "../../hooks/useNavbar";
 
 const navItems = [
-  { label: "About", href: "/" },
-  { label: "CV & Resume", href: "/resume" },
-  { label: "Projects", href: "/projects" },
-  { label: "Experience", href: "/experience" },
+  { id: "about", label: "About", href: "#about" },
+  { id: "resume", label: "Resume", href: "#resume" },
+  { id: "projects", label: "Projects", href: "#projects" },
+  { id: "experience", label: "Experience", href: "#experience" },
 ];
-
-const getInitialSection = (path: string) => {
-  switch (path) {
-    case "/":
-      return 0;
-    case "/resume":
-      return 1;
-    case "/projects":
-      return 2;
-    case "/experience":
-      return 3;
-    default:
-      return 0;
-  }
-};
 
 const mobileMenuVariants = {
   hidden: { opacity: 0, height: 0 },
@@ -50,38 +34,38 @@ const mobileMenuItemVariants = {
 };
 
 const Navbar = () => {
-  const pathname = usePathname();
-  const [section, setSection] = useState(getInitialSection(pathname));
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    setSection(getInitialSection(pathname));
-  }, [pathname]);
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+  const { activeId, isOpen, handleNavClick, toggleMenu, closeMenu } =
+    useNavbar(navItems);
 
   return (
-    <nav className="bg-gray-800 text-white relative">
-      <div className="px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-4 left-0 right-0 z-50">
+      <div className="px-0 max-w-lg mx-auto bg-gray-800/80 backdrop-blur supports-[backdrop-filter]:bg-gray-800/60 text-white border border-gray-700/50 rounded-xl shadow-md">
         <div className="relative flex h-16 items-center">
           <Link
-            href="/"
+            href="#about"
             className="sm:hidden text-white font-semibold text-lg tracking-tight"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick("about");
+              closeMenu();
+            }}
           >
             Oscar
           </Link>
           <div className="hidden sm:flex absolute left-1/2 -translate-x-1/2">
             <LayoutGroup>
               <div className="flex justify-center space-x-4 relative">
-                {navItems.map((item, idx) => (
+                {navItems.map((item) => (
                   <Link
                     href={item.href}
-                    key={idx}
-                    onClick={() => setSection(idx)}
-                    className="relative px-3 py-2 rounded-md text-sm font-medium cursor-pointer"
+                    key={item.id}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item.id);
+                    }}
+                    className="relative px-3 py-2 text-center w-24 rounded-md text-sm font-medium cursor-pointer"
                   >
-                    {section === idx && (
+                    {activeId === item.id && (
                       <motion.span
                         layoutId="navHighlight"
                         className="absolute inset-0 bg-gray-700 rounded-md"
@@ -94,7 +78,7 @@ const Navbar = () => {
                     )}
                     <span
                       className={
-                        section === idx
+                        activeId === item.id
                           ? "relative text-white"
                           : "relative text-gray-400 hover:text-white"
                       }
@@ -111,7 +95,7 @@ const Navbar = () => {
             <motion.button
               type="button"
               aria-label="Toggle menu"
-              onClick={() => setIsOpen((prev) => !prev)}
+              onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
               animate={{ rotate: isOpen ? 90 : 0, scale: isOpen ? 1.05 : 1 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -158,22 +142,26 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             key="mobileMenu"
-            className="sm:hidden absolute top-16 left-0 right-0 bg-gray-800 border-t border-gray-700 shadow-lg z-50 overflow-hidden"
+            className="sm:hidden absolute top-16 left-0 right-0 bg-gray-800/95 border-t border-gray-700 shadow-lg z-50 overflow-hidden"
             initial="hidden"
             animate="show"
             exit="exit"
             variants={mobileMenuVariants}
           >
-            <div className="px-2 py-3 space-y-1">
-              {navItems.map((item, idx) => (
-                <motion.div key={item.href} variants={mobileMenuItemVariants}>
+            <div className="px-0 py-3 space-y-1">
+              {navItems.map((item) => (
+                <motion.div key={item.id} variants={mobileMenuItemVariants}>
                   <Link
                     href={item.href}
-                    onClick={() => setSection(idx)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item.id);
+                      closeMenu();
+                    }}
                     className={
-                      section === idx
-                        ? "block px-3 py-2 rounded-md text-base font-medium bg-gray-700 text-white"
-                        : "block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                      activeId === item.id
+                        ? "block px-0 py-2 rounded-md text-base font-medium bg-gray-700 text-white"
+                        : "block px-0 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
                     }
                   >
                     {item.label}

@@ -40,7 +40,16 @@ const ProjectSection = () => {
           title="Gobicraft — 3D Sandbox"
           image={GobicraftLogo}
           description="Voxel-based sandbox with building, terrain exploration, and interactive physics."
-          tags={["Three.js", "WebGL", "Vercel", "React", "TypeScript"]}
+          tags={[
+            "Three.js",
+            "React",
+            "AI Chatbot",
+            "Large Language Model API",
+            "TypeScript",
+            "Gemini AI",
+            "Vercel",
+            "WebGL",
+          ]}
           githubLink="https://github.com/orchlonn/gobicraft"
           demoLink="https://gobicraft.vercel.app/"
           className="animate-scale-in-delay"

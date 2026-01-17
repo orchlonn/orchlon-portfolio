@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 

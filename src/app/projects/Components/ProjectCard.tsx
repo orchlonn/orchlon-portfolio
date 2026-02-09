@@ -75,7 +75,7 @@ const ActionButton = ({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-400 to-teal-300 text-black px-3 py-2 rounded-md hover:from-teal-300 hover:to-teal-400 transition-all duration-300 text-sm ring-1 ring-teal-600/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500/50"
+      className="inline-flex items-center gap-2 bg-[#8b5cf6] text-white px-3 py-2 rounded-md hover:bg-[#a78bfa] hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all duration-300 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8b5cf6]/50"
     >
       {children}
       <span className="hidden sm:inline">{label}</span>
@@ -102,14 +102,14 @@ const ProjectCard = ({
   return (
     <div
       className={clsx(
-        "group relative flex flex-col rounded-3xl border border-slate-700/60 bg-slate-900/60 backdrop-blur-sm shadow-md hover:shadow-lg transition-all duration-500 hover:-translate-y-1",
+        "group relative flex flex-col rounded-2xl border border-[#1a1a25] bg-[#1a1a25] shadow-md hover:border-[#8b5cf6]/30 hover:shadow-[0_0_30px_rgba(0,255,85,0.1)] transition-all duration-500",
         featured ? "md:col-span-2 xl:col-span-2" : "",
         className
       )}
     >
       <div
         className={clsx(
-          "relative w-full overflow-hidden rounded-t-3xl",
+          "relative w-full overflow-hidden rounded-t-2xl",
           featured ? "h-64 sm:h-72" : "h-44 sm:h-56"
         )}
       >
@@ -119,7 +119,7 @@ const ProjectCard = ({
           fill
           className="object-cover transition-transform duration-500 ease-out scale-100 group-hover:scale-[1.03]"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1a1a25] via-transparent to-transparent" />
       </div>
 
       <div className="flex flex-col gap-3 p-4 sm:p-5">
@@ -130,12 +130,12 @@ const ProjectCard = ({
           {(appStoreLink || playStoreLink) && (
             <div className="flex items-center gap-1">
               {appStoreLink && (
-                <span className="px-2 py-1 text-[10px] font-medium rounded-md bg-teal-400/20 text-teal-200">
+                <span className="px-2 py-1 text-[10px] font-mono font-medium rounded-md bg-[#8b5cf6]/10 text-[#8b5cf6]">
                   iOS
                 </span>
               )}
               {playStoreLink && (
-                <span className="px-2 py-1 text-[10px] font-medium rounded-md bg-teal-400/20 text-teal-200">
+                <span className="px-2 py-1 text-[10px] font-mono font-medium rounded-md bg-[#8b5cf6]/10 text-[#8b5cf6]">
                   Android
                 </span>
               )}
@@ -144,7 +144,7 @@ const ProjectCard = ({
         </div>
 
         {description && (
-          <p className="text-slate-300 text-sm leading-relaxed">
+          <p className="text-slate-400 text-sm leading-relaxed">
             {description}
           </p>
         )}
@@ -154,7 +154,7 @@ const ProjectCard = ({
             {visibleTags.map((tag) => (
               <span
                 key={tag}
-                className="px-2 py-1 text-xs rounded-full bg-slate-800 text-slate-300 border border-slate-700"
+                className="px-2 py-1 text-xs font-mono rounded-full bg-[#8b5cf6]/5 text-[#8b5cf6]/70 border border-[#8b5cf6]/15"
               >
                 {tag}
               </span>
@@ -163,10 +163,10 @@ const ProjectCard = ({
               <button
                 type="button"
                 onClick={() => setShowAllTags((v) => !v)}
-                className="px-2 py-1 text-xs rounded-full bg-slate-800 text-slate-300 border border-slate-700 hover:bg-slate-700 transition-colors"
+                className="px-2 py-1 text-xs font-mono rounded-full bg-[#8b5cf6]/5 text-[#8b5cf6]/70 border border-[#8b5cf6]/15 hover:bg-[#8b5cf6]/10 transition-colors"
                 aria-expanded={showAllTags}
               >
-                {showAllTags ? "See less" : `See more (+${tags.length - 3})`}
+                {showAllTags ? "See less" : `+${tags.length - 3}`}
               </button>
             )}
           </div>

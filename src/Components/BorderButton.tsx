@@ -13,7 +13,7 @@ const BorderButton = ({
       href={link}
       target="_blank"
       onClick={onPress}
-      className="border border-teal-300 text-teal-300 p-2 rounded-md px-4 py-2 hover:border-transparent hover:bg-[#F5F5F5] hover:text-black transition-[background-color,color,border] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] transform cursor-pointer tracking-wide"
+      className="border border-[#8b5cf6]/50 text-[#a78bfa] p-2 rounded-md px-4 py-2 hover:bg-[#8b5cf6] hover:text-white hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-300 cursor-pointer tracking-wide font-mono text-sm"
     >
       {buttonTitle}
     </a>

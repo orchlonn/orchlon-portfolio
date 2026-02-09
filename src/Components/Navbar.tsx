@@ -40,14 +40,14 @@ const Navbar = () => {
   return (
     <nav className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-0">
       <div
-        className={`max-w-lg mx-auto bg-gray-800/80 backdrop-blur supports-[backdrop-filter]:bg-gray-800/60 text-white border border-gray-700/50 shadow-md transition-all duration-200 ${
+        className={`max-w-lg mx-auto bg-[#0a0a0f]/80 backdrop-blur-xl supports-[backdrop-filter]:bg-[#0a0a0f]/60 text-white border border-[#1a1a25] shadow-md transition-all duration-200 ${
           isOpen ? "rounded-t-xl sm:rounded-xl" : "rounded-xl"
         }`}
       >
         <div className="relative flex h-16 items-center px-4 sm:px-0">
           <Link
             href="#about"
-            className="sm:hidden text-white font-semibold text-lg tracking-tight"
+            className="sm:hidden text-[#8b5cf6] font-mono font-bold text-lg tracking-tight"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick("about");
@@ -72,7 +72,7 @@ const Navbar = () => {
                     {activeId === item.id && (
                       <motion.span
                         layoutId="navHighlight"
-                        className="absolute inset-0 bg-gray-700 rounded-md"
+                        className="absolute inset-0 rounded-md border-b-2 border-[#8b5cf6] bg-[#8b5cf6]/5"
                         transition={{
                           type: "spring",
                           stiffness: 100,
@@ -83,8 +83,8 @@ const Navbar = () => {
                     <span
                       className={
                         activeId === item.id
-                          ? "relative text-white"
-                          : "relative text-gray-400 hover:text-white"
+                          ? "relative text-[#a78bfa]"
+                          : "relative text-gray-400 hover:text-white transition-colors"
                       }
                     >
                       {item.label}
@@ -100,7 +100,7 @@ const Navbar = () => {
               type="button"
               aria-label="Toggle menu"
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-[#a78bfa] hover:bg-[#1a1a25] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#0a0a0f] focus:ring-[#8b5cf6]/50"
               animate={{ rotate: isOpen ? 90 : 0, scale: isOpen ? 1.05 : 1 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
@@ -146,7 +146,7 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             key="mobileMenu"
-            className="sm:hidden absolute top-16 left-4 right-4 bg-gray-800/95 border border-t-0 border-gray-700/50 shadow-lg z-50 overflow-hidden rounded-b-xl backdrop-blur"
+            className="sm:hidden absolute top-16 left-4 right-4 bg-[#0a0a0f]/95 border border-t-0 border-[#1a1a25] shadow-lg z-50 overflow-hidden rounded-b-xl backdrop-blur-xl"
             initial="hidden"
             animate="show"
             exit="exit"
@@ -164,8 +164,8 @@ const Navbar = () => {
                     }}
                     className={
                       activeId === item.id
-                        ? "block px-4 py-2 rounded-md text-base font-medium bg-gray-700 text-white"
-                        : "block px-4 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+                        ? "block px-4 py-2 rounded-md text-base font-medium bg-[#8b5cf6]/10 text-[#a78bfa] border-l-2 border-[#8b5cf6]"
+                        : "block px-4 py-2 rounded-md text-base font-medium text-gray-300 hover:text-[#a78bfa] hover:bg-[#1a1a25]"
                     }
                   >
                     {item.label}

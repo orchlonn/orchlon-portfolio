@@ -35,9 +35,11 @@ export default function Home() {
 
           {/* About text */}
           <p className="animate-slide-up-delay text-slate-400 text-center text-sm sm:text-base leading-relaxed max-w-2xl mb-10">
-            Passionate software developer driven by curiosity and innovation.
-            Building end-to-end projects across web, mobile, and AI — with a
-            growing focus on cybersecurity and secure software development.
+            I’m a software developer who builds end-to-end solutions across web,
+            mobile, and AI/ML. I focus on applying machine learning and
+            retrieval-augmented generation (RAG) to solve real-world problems,
+            with a strong interest in developing secure, reliable, and scalable
+            software.
           </p>
         </div>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   SiReact,
@@ -11,15 +12,29 @@ import {
   SiSpringboot,
   SiSharp,
   SiMongodb,
+  SiMysql,
   SiFirebase,
-  SiOpenai,
+  SiFastapi,
+  SiNestjs,
   SiAmazonwebservices,
   SiDocker,
   SiGit,
   SiUnity,
+  SiPytorch,
+  SiTensorflow,
+  SiHuggingface,
+  SiLangchain,
+  SiScikitlearn,
+  SiJupyter,
+  SiPandas,
+  SiClaude,
+  SiVercel,
+  SiGooglecloud,
+  SiTailwindcss,
+  SiVite,
 } from "react-icons/si";
-import { TbBrain, TbMessageChatbot } from "react-icons/tb";
-import { HiDevicePhoneMobile } from "react-icons/hi2";
+import { TbBrain, TbMessageChatbot, TbDatabaseSearch } from "react-icons/tb";
+import { HiDevicePhoneMobile, HiOutlineCursorArrowRays } from "react-icons/hi2";
 import {
   HiOutlineCode,
   HiOutlineServer,
@@ -37,6 +52,8 @@ const CATEGORIES = [
       { name: "React", icon: SiReact },
       { name: "Next.js", icon: SiNextdotjs },
       { name: "TypeScript", icon: SiTypescript },
+      { name: "Tailwind", icon: SiTailwindcss },
+      { name: "Vite", icon: SiVite },
       { name: "React Native", icon: HiDevicePhoneMobile },
       { name: "Three.js", icon: SiThreedotjs },
     ],
@@ -49,8 +66,11 @@ const CATEGORIES = [
       { name: "Node.js", icon: SiNodedotjs },
       { name: "Python", icon: SiPython },
       { name: "Spring Boot", icon: SiSpringboot },
+      { name: "NestJS", icon: SiNestjs },
+      { name: "FastAPI", icon: SiFastapi },
       { name: "C#", icon: SiSharp },
       { name: "MongoDB", icon: SiMongodb },
+      { name: "MySQL", icon: SiMysql },
       { name: "Firebase", icon: SiFirebase },
     ],
   },
@@ -59,9 +79,16 @@ const CATEGORIES = [
     icon: HiOutlineChip,
     color: "#22d3ee",
     skills: [
-      { name: "OpenAI", icon: SiOpenai },
       { name: "LLMs", icon: TbMessageChatbot },
       { name: "NLP", icon: TbBrain },
+      { name: "RAG", icon: TbDatabaseSearch },
+      { name: "PyTorch", icon: SiPytorch },
+      { name: "TensorFlow", icon: SiTensorflow },
+      { name: "Hugging Face", icon: SiHuggingface },
+      { name: "LangChain", icon: SiLangchain },
+      { name: "scikit-learn", icon: SiScikitlearn },
+      { name: "Jupyter", icon: SiJupyter },
+      { name: "Pandas", icon: SiPandas },
     ],
   },
   {
@@ -70,9 +97,13 @@ const CATEGORIES = [
     color: "#8b5cf6",
     skills: [
       { name: "AWS", icon: SiAmazonwebservices },
+      { name: "Google Cloud", icon: SiGooglecloud },
+      { name: "Vercel", icon: SiVercel },
       { name: "Docker", icon: SiDocker },
       { name: "Git", icon: SiGit },
       { name: "Unity", icon: SiUnity },
+      { name: "Cursor", icon: HiOutlineCursorArrowRays },
+      { name: "Claude CLI", icon: SiClaude },
     ],
   },
 ];
@@ -94,7 +125,15 @@ const skillVariants = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
 };
 
+const INITIAL_SKILL_COUNT = 4;
+
 export default function SkillsSection() {
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  const toggleExpanded = (title: string) => {
+    setExpanded((prev) => ({ ...prev, [title]: !prev[title] }));
+  };
+
   return (
     <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <SectionHeader title="Skills" desc="What I work with" />
@@ -136,10 +175,15 @@ export default function SkillsSection() {
               className="flex flex-wrap gap-2"
               variants={containerVariants}
             >
-              {cat.skills.map((skill) => (
+              {(expanded[cat.title]
+                ? cat.skills
+                : cat.skills.slice(0, INITIAL_SKILL_COUNT)
+              ).map((skill) => (
                 <motion.div
                   key={skill.name}
                   variants={skillVariants}
+                  initial={false}
+                  animate="visible"
                   whileHover={{ scale: 1.05 }}
                   className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-slate-300 text-sm font-mono transition-colors hover:border-[color:var(--hover-color)]/40 hover:text-white"
                 >
@@ -147,6 +191,17 @@ export default function SkillsSection() {
                   {skill.name}
                 </motion.div>
               ))}
+              {cat.skills.length > INITIAL_SKILL_COUNT && (
+                <button
+                  type="button"
+                  onClick={() => toggleExpanded(cat.title)}
+                  className="flex items-center px-3 py-1.5 text-sm font-mono transition-colors text-[#8b5cf6]/60 hover:text-[#8b5cf6]"
+                >
+                  {expanded[cat.title]
+                    ? "Show Less"
+                    : `Show All (+${cat.skills.length - INITIAL_SKILL_COUNT})`}
+                </button>
+              )}
             </motion.div>
           </motion.div>
         ))}

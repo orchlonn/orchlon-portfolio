@@ -76,7 +76,7 @@ const ProjectSection = () => {
           />
         </TiltCard>
 
-        <TiltCard className="relative animate-fade-in-delay-2">
+        <TiltCard className="relative animate-scale-in">
           <ProjectCard
             title="VR Sorting Algorithms"
             image={SortingAppLogo}
@@ -86,7 +86,7 @@ const ProjectSection = () => {
           />
         </TiltCard>
 
-        <TiltCard className="relative animate-fade-in-delay-2">
+        <TiltCard className="relative animate-scale-in">
           <ProjectCard
             title="Logistics Landing Page"
             image={LogisticCompanyLogo}

@@ -102,7 +102,7 @@ const ProjectCard = ({
   return (
     <div
       className={clsx(
-        "group relative flex flex-col rounded-2xl border border-[#1a1a25] bg-[#1a1a25] shadow-md hover:border-[#8b5cf6]/30 hover:shadow-[0_0_30px_rgba(0,255,85,0.1)] transition-all duration-500",
+        "group relative flex flex-col rounded-2xl border border-[#1a1a25] bg-[#1a1a25] shadow-md hover:border-[#22d3ee]/30 hover:shadow-[0_0_30px_rgba(0,255,85,0.1)] transition-all duration-500",
         featured ? "md:col-span-2 xl:col-span-2" : "",
         className
       )}
@@ -130,12 +130,12 @@ const ProjectCard = ({
           {(appStoreLink || playStoreLink) && (
             <div className="flex items-center gap-1">
               {appStoreLink && (
-                <span className="px-2 py-1 text-[10px] font-mono font-medium rounded-md bg-[#8b5cf6]/10 text-[#8b5cf6]">
+                <span className="px-2 py-1 text-[10px] font-mono font-medium rounded-md bg-[#22d3ee]/10 text-[#22d3ee]">
                   iOS
                 </span>
               )}
               {playStoreLink && (
-                <span className="px-2 py-1 text-[10px] font-mono font-medium rounded-md bg-[#8b5cf6]/10 text-[#8b5cf6]">
+                <span className="px-2 py-1 text-[10px] font-mono font-medium rounded-md bg-[#22d3ee]/10 text-[#22d3ee]">
                   Android
                 </span>
               )}
@@ -154,7 +154,7 @@ const ProjectCard = ({
             {visibleTags.map((tag) => (
               <span
                 key={tag}
-                className="px-2 py-1 text-xs font-mono rounded-full bg-[#8b5cf6]/5 text-[#8b5cf6]/70 border border-[#8b5cf6]/15"
+                className="px-2 py-1 text-xs font-mono rounded-full bg-[#22d3ee]/5 text-[#22d3ee]/70 border border-[#22d3ee]/15"
               >
                 {tag}
               </span>
@@ -163,10 +163,10 @@ const ProjectCard = ({
               <button
                 type="button"
                 onClick={() => setShowAllTags((v) => !v)}
-                className="px-2 py-1 text-xs font-mono rounded-full bg-[#8b5cf6]/5 text-[#8b5cf6]/70 border border-[#8b5cf6]/15 hover:bg-[#8b5cf6]/10 transition-colors"
+                className="px-2 py-1 text-xs font-mono rounded-full bg-[#22d3ee]/5 text-[#22d3ee]/70 border border-[#22d3ee]/15 hover:bg-[#22d3ee]/10 transition-colors"
                 aria-expanded={showAllTags}
               >
-                {showAllTags ? "See less" : `+${tags.length - 3}`}
+                {showAllTags ? "Show less" : `Show all (+${tags.length - 3})`}
               </button>
             )}
           </div>

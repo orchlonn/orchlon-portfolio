@@ -91,9 +91,17 @@ const ProjectSection = () => {
             title="Logistics Landing Page"
             image={LogisticCompanyLogo}
             description="High-converting landing page for a logistics company with modern branding."
-            tags={["Next.js", "Tailwind", "Vercel", "React", "TypeScript"]}
-            demoLink="https://andjintrans.vercel.app/"
-            githubLink="https://github.com/orchlonn/Andjintrans"
+            tags={[
+              "Next.js",
+              "Tailwind",
+              "Vercel",
+              "React",
+              "TypeScript",
+              "Framer Motion",
+              "3d.js",
+            ]}
+            demoLink="https://andjintrans-llc.vercel.app/#home"
+            githubLink="https://github.com/orchlonn/andjintrans-LLC"
           />
         </TiltCard>
       </div>

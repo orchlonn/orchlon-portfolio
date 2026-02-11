@@ -61,7 +61,7 @@ const CATEGORIES = [
   {
     title: "Backend",
     icon: HiOutlineServer,
-    color: "#8b5cf6",
+    color: "#22d3ee",
     skills: [
       { name: "Node.js", icon: SiNodedotjs },
       { name: "Python", icon: SiPython },
@@ -94,7 +94,7 @@ const CATEGORIES = [
   {
     title: "DevOps & Tools",
     icon: HiOutlineCog,
-    color: "#8b5cf6",
+    color: "#22d3ee",
     skills: [
       { name: "AWS", icon: SiAmazonwebservices },
       { name: "Google Cloud", icon: SiGooglecloud },
@@ -195,7 +195,7 @@ export default function SkillsSection() {
                 <button
                   type="button"
                   onClick={() => toggleExpanded(cat.title)}
-                  className="flex items-center px-3 py-1.5 text-sm font-mono transition-colors text-[#8b5cf6]/60 hover:text-[#8b5cf6]"
+                  className="flex items-center px-3 py-1.5 text-sm font-mono transition-colors text-[#22d3ee]/60 hover:text-[#22d3ee]"
                 >
                   {expanded[cat.title]
                     ? "Show Less"

@@ -15,6 +15,7 @@ type ProjectCardProps = {
   playStoreLink?: string;
   featured?: boolean;
   className?: string;
+  imageContain?: boolean;
 };
 
 const Icon = {
@@ -94,6 +95,7 @@ const ProjectCard = ({
   playStoreLink,
   featured = false,
   className = "",
+  imageContain = false,
 }: ProjectCardProps) => {
   const [showAllTags, setShowAllTags] = useState(false);
   const visibleTags = showAllTags ? tags : tags.slice(0, 3);
@@ -117,7 +119,7 @@ const ProjectCard = ({
           src={image}
           alt={title}
           fill
-          className="object-cover transition-transform duration-500 ease-out scale-100 group-hover:scale-[1.03]"
+          className={clsx("transition-transform duration-500 ease-out scale-100 group-hover:scale-[1.03]", imageContain ? "object-contain p-6" : "object-cover")}
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1a1a25] via-transparent to-transparent" />
       </div>

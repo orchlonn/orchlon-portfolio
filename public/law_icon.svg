@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="64" fill="#0a0a1a"/>
+  <g transform="translate(256, 240)" stroke="#22d3ee" stroke-width="8" fill="none">
+    <!-- Pillar -->
+    <line x1="0" y1="-140" x2="0" y2="140" stroke-linecap="round"/>
+    <!-- Base -->
+    <line x1="-60" y1="140" x2="60" y2="140" stroke-width="10" stroke-linecap="round"/>
+    <!-- Top beam -->
+    <line x1="-120" y1="-140" x2="120" y2="-140" stroke-width="8" stroke-linecap="round"/>
+    <!-- Left chains -->
+    <line x1="-120" y1="-140" x2="-120" y2="-60" stroke-width="4"/>
+    <!-- Right chains -->
+    <line x1="120" y1="-140" x2="120" y2="-60" stroke-width="4"/>
+    <!-- Left pan -->
+    <path d="M-160,-60 Q-120,0 -80,-60" stroke-width="6" fill="#22d3ee" fill-opacity="0.15"/>
+    <!-- Right pan -->
+    <path d="M80,-60 Q120,0 160,-60" stroke-width="6" fill="#22d3ee" fill-opacity="0.15"/>
+    <!-- Top circle -->
+    <circle cx="0" cy="-140" r="12" fill="#22d3ee" fill-opacity="0.3" stroke-width="6"/>
+  </g>
+</svg>

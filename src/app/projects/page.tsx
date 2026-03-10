@@ -1,10 +1,7 @@
 import SectionHeader from "@/Components/SectionHeader";
 import ProjectCard from "./Components/ProjectCard";
+import SmallProjectCard from "./Components/SmallProjectCard";
 import TiltCard from "@/Components/Three/TiltCard";
-import BizzzyLogo from "../../../public/Bizzzy_logo.png";
-import SortingAppLogo from "../../../public/sorting_app_logo.png";
-import LogisticCompanyLogo from "../../../public/logistic_company_logo.png";
-import GobicraftLogo from "../../../public/gobicraft.jpeg";
 import InvestAppLogo from "../../../public/invest_ai_logo.png";
 
 const ProjectSection = () => {
@@ -40,70 +37,77 @@ const ProjectSection = () => {
 
         <TiltCard className="relative animate-scale-in-delay">
           <ProjectCard
-            title="Gobicraft — 3D Sandbox"
-            image={GobicraftLogo}
-            description="Voxel-based sandbox with building, terrain exploration, and interactive physics."
+            title="LawByLoya — Legal Tech"
+            image="/law_icon.svg"
+            imageContain
+            description="AI-powered platform for exploring Mongolian legislation with bilingual access, annotations, and intelligent legal assistance."
             tags={[
-              "Three.js",
+              "Next.js",
               "React",
+              "Fast API",
+              "Python",
+              "AI Law Agents",
+              "LangGraph",
+              "RAG - Retrieval Augmented Generation",
+              "Text Embedding",
+              "Supabase",
+              "TypeScript",
+              "Tailwind",
               "AI Chatbot",
               "Large Language Model API",
-              "TypeScript",
-              "Gemini AI",
-              "Vercel",
-              "WebGL",
             ]}
+            demoLink="https://www.lawbyloya.com/"
+          />
+        </TiltCard>
+
+        <TiltCard className="relative animate-scale-in">
+          <ProjectCard
+            title="EduTrack — Education Platform"
+            image="/edutrack_icon.svg"
+            imageContain
+            description="Unified school management platform connecting administrators, teachers, parents, and students with real-time data sync."
+            tags={[
+              "Next.js",
+              "React",
+              "TypeScript",
+              "Tailwind",
+              "Supabase",
+              "Real-time Sync",
+            ]}
+            demoLink="https://edutrack-landing.vercel.app/"
+          />
+        </TiltCard>
+      </div>
+
+      <div className="max-w-7xl mx-auto w-full mt-4">
+        <h3 className="text-sm font-mono text-slate-200 uppercase tracking-widest mb-2">
+          Other Projects
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <SmallProjectCard
+            title="Gobicraft — 3D Sandbox"
+            tags={["Three.js", "React", "TypeScript", "Gemini AI", "WebGL"]}
             githubLink="https://github.com/orchlonn/gobicraft"
             demoLink="https://gobicraft.vercel.app/"
           />
-        </TiltCard>
-
-        <TiltCard className="relative animate-scale-in">
-          <ProjectCard
+          <SmallProjectCard
             title="Bizzzy — Gig Economy"
-            image={BizzzyLogo}
-            description="Marketplace for on-demand services with escrow, reviews, and job tracking."
-            tags={[
-              "React Native",
-              "Node.js",
-              "Expo",
-              "Firebase",
-              "React",
-              "TypeScript",
-            ]}
+            tags={["React Native", "Node.js", "Firebase", "TypeScript"]}
             githubLink="https://github.com/Bizzzy-software"
             demoLink="https://drive.google.com/file/d/1wuJXLsGQBIHQUbkEfV9y3TfLk_BmVOU-/view?usp=sharing"
           />
-        </TiltCard>
-
-        <TiltCard className="relative animate-scale-in">
-          <ProjectCard
+          <SmallProjectCard
             title="VR Sorting Algorithms"
-            image={SortingAppLogo}
-            description="Immersive visualization of classic sorting algorithms in VR."
             tags={["Unity", "C#", "VR"]}
             githubLink="https://github.com/CS-466-group-4/VR-Sorting-app"
           />
-        </TiltCard>
-
-        <TiltCard className="relative animate-scale-in">
-          <ProjectCard
-            title="Logistics Landing Page"
-            image={LogisticCompanyLogo}
-            description="High-converting landing page for a logistics company with modern branding."
-            tags={[
-              "Next.js",
-              "Tailwind",
-              "Vercel",
-              "React",
-              "TypeScript",
-              "Framer Motion",
-              "3d.js",
-            ]}
-            demoLink="https://andjintrans-llc.vercel.app/#home"
+          <SmallProjectCard
+            title="Andjintrans — Logistics"
+            tags={["Next.js", "Tailwind", "Framer Motion", "Three.js"]}
             githubLink="https://github.com/orchlonn/andjintrans-LLC"
+            demoLink="https://andjintrans-llc.vercel.app/#home"
           />
-        </TiltCard>
+        </div>
       </div>
     </div>
   );

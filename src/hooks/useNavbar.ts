@@ -4,7 +4,6 @@ import { NavItem } from "../model/navbar.model";
 export const useNavbar = (navItems: NavItem[]) => {
   const [activeId, setActiveId] = useState<string>("about");
   const [isOpen, setIsOpen] = useState(false);
-  const observersRef = useRef<IntersectionObserver | null>(null);
   const isScrollingRef = useRef<boolean>(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const sectionIds = useMemo(() => navItems.map((n) => n.id), [navItems]);
@@ -43,50 +42,41 @@ export const useNavbar = (navItems: NavItem[]) => {
   };
 
   useEffect(() => {
-    const handleIntersect: IntersectionObserverCallback = (entries) => {
-      // Skip observer updates during user-initiated smooth scrolling
+    const handleScroll = () => {
       if (isScrollingRef.current) return;
 
-      // Find all intersecting sections
-      const intersecting = entries.filter((e) => e.isIntersecting);
+      const offset = 120;
+      let currentId = sectionIds[0];
 
-      if (intersecting.length === 0) return;
+      for (let i = 0; i < sectionIds.length; i++) {
+        const el = document.getElementById(sectionIds[i]);
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top;
+        if (top <= offset) {
+          currentId = sectionIds[i];
+        }
 
-      // Sort by their position on the page (top to bottom)
-      const sorted = intersecting.sort((a, b) => {
-        const rectA = a.target.getBoundingClientRect();
-        const rectB = b.target.getBoundingClientRect();
-        return rectA.top - rectB.top;
-      });
-
-      // Find the section closest to the top of the viewport
-      const closest = sorted.reduce((prev, curr) => {
-        const prevRect = prev.target.getBoundingClientRect();
-        const currRect = curr.target.getBoundingClientRect();
-        const prevDistance = Math.abs(prevRect.top);
-        const currDistance = Math.abs(currRect.top);
-        return currDistance < prevDistance ? curr : prev;
-      });
-
-      if (closest?.target?.id) {
-        setActiveId(closest.target.id);
+        // If this section's bottom is above the offset, advance to the next nav item
+        // This handles gaps between sections (e.g. skills section between about and resume)
+        const bottom = el.getBoundingClientRect().bottom;
+        if (bottom <= offset && i + 1 < sectionIds.length) {
+          currentId = sectionIds[i + 1];
+        }
       }
+
+      // If scrolled to the bottom, activate the last section
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+        currentId = sectionIds[sectionIds.length - 1];
+      }
+
+      setActiveId(currentId);
     };
 
-    const observer = new IntersectionObserver(handleIntersect, {
-      root: null,
-      rootMargin: "-100px 0px -66% 0px",
-      threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5],
-    });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
-    observersRef.current = observer;
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
     return () => {
-      observer.disconnect();
-      observersRef.current = null;
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [sectionIds]);
 

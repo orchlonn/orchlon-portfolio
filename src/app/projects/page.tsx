@@ -105,7 +105,7 @@ const ProjectSection = () => {
             title="Andjintrans — Logistics"
             tags={["Next.js", "Tailwind", "Framer Motion", "Three.js"]}
             githubLink="https://github.com/orchlonn/andjintrans-LLC"
-            demoLink="https://andjintrans-llc.vercel.app/#home"
+            demoLink="https://andjintrans.com"
           />
         </div>
       </div>

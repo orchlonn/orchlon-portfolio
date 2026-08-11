@@ -12,14 +12,6 @@ export default function Home() {
         className="scroll-mt-24 relative min-h-[calc(100vh-5rem)] w-full flex flex-col items-center justify-center"
       >
         <div className="flex flex-col items-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Badge */}
-          <div className="animate-fade-in flex items-center gap-2 px-4 py-2 rounded-full border border-[#8b5cf6]/20 bg-[#8b5cf6]/5 mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#8b5cf6] pulse-dot" />
-            <span className="text-[#a78bfa] text-sm font-mono">
-              Available for opportunities
-            </span>
-          </div>
-
           {/* Glitch Title */}
           <h1
             className="glitch-text animate-slide-up text-4xl sm:text-5xl md:text-7xl font-black text-white tracking-tight text-center mb-4"

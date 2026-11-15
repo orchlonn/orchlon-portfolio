@@ -18,7 +18,7 @@ export const PROJECTS: readonly Project[] = [
     slug: "invest-ai",
     index: "02",
     title: "Invest AI",
-    kicker: "Fintech · iOS",
+    kicker: "Fintech · iOS · Android",
     summary:
       "AI-powered trading assistant with real-time signals, watchlists, and multi-exchange support.",
     outcome:
@@ -30,11 +30,31 @@ export const PROJECTS: readonly Project[] = [
         label: "App Store",
         href: "https://apps.apple.com/us/app/invest-ai-smart-trading/id6752223346",
       },
+      {
+        label: "Google Play",
+        href: "https://play.google.com/store/apps/details?id=com.orchlon.SmartTradeAI",
+      },
+    ],
+  },
+  {
+    slug: "ai-ide",
+    index: "03",
+    title: "AI IDE",
+    kicker: "Developer Tools · AI Agents",
+    summary:
+      "Browser-based code editor with an AI assistant that answers questions about your codebase, plus a built-in terminal.",
+    outcome:
+      "FastAPI multi-agent backend routes each request to a LangChain agent, with RAG over the codebase in Supabase pgvector.",
+    tags: ["Next.js", "Monaco", "FastAPI", "LangChain", "Ollama (Llama 3.1)", "pgvector"],
+    year: "2026",
+    links: [
+      { label: "Site", href: "https://ai-ide-landing.vercel.app/" },
+      { label: "GitHub", href: "https://github.com/orchlonn/AI-IDE-frontend" },
     ],
   },
   {
     slug: "gobicraft",
-    index: "03",
+    index: "04",
     title: "Gobicraft",
     kicker: "Generative 3D",
     summary:
@@ -46,20 +66,14 @@ export const PROJECTS: readonly Project[] = [
       { label: "GitHub", href: "https://github.com/orchlonn/gobicraft" },
     ],
   },
-  {
-    slug: "edutrack",
-    index: "04",
-    title: "EduTrack",
-    kicker: "Education Platform",
-    summary:
-      "Unified school management platform connecting administrators, teachers, parents, and students with real-time data sync.",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind", "Supabase", "Real-time sync"],
-    year: "2024",
-    links: [{ label: "Live", href: "https://edutrack-landing.vercel.app/" }],
-  },
 ] as const;
 
 export const ARCHIVE: readonly ArchiveProject[] = [
+  {
+    title: "EduTrack",
+    note: "School management, Next.js + Supabase",
+    href: "https://edutrack-landing.vercel.app/",
+  },
   {
     title: "Andjintrans",
     note: "Logistics, Next.js",

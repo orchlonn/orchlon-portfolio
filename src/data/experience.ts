@@ -23,16 +23,7 @@ export const EXPERIENCE: readonly Experience[] = [
       "Developed an interactive 3D visualization system using Three.js, generating and rendering 3D matrices and shapes with dynamic real-time updates.",
       "Integrated generative AI to automatically modify and extend the 3D codebase, allowing AI-driven creation and transformation of shapes.",
     ],
-    skills: [
-      "Three.js",
-      "Generative AI",
-      "TypeScript",
-      "React",
-      "Node.js",
-      "Python",
-      "PyTorch",
-      "OpenAI",
-    ],
+    skills: ["Three.js", "Generative AI", "TypeScript", "React", "Node.js", "OpenAI"],
   },
   {
     id: "cwu",
@@ -44,7 +35,7 @@ export const EXPERIENCE: readonly Experience[] = [
       "Implemented KNN to predict housing prices based on location and property features, improving model precision by 12%.",
       "Applied KNN to classify handwritten digits from image data, achieving 95% prediction accuracy.",
     ],
-    skills: ["PyTorch", "Hugging Face", "NLP", "LLMs", "RAG", "Jupyter", "Fine-tuning"],
+    skills: ["Python", "KNN", "Regression", "Classification", "Jupyter"],
   },
   {
     id: "pypup",
@@ -65,7 +56,6 @@ export const EXPERIENCE: readonly Experience[] = [
     role: "Software Engineer Intern",
     company: "Mongol Content",
     bullets: [
-      "Developed a mobile application for iOS and Android using React Native.",
       "Converted the MPT Pay banking application from its native language to React Native, allowing the company to cut development costs by 50%.",
     ],
     skills: ["JavaScript", "React Native", "Node.js", "Expo", "Firebase", "Figma"],
@@ -77,8 +67,7 @@ export const EXPERIENCE: readonly Experience[] = [
     role: "Software Engineer Intern",
     company: "Steppe Link Holding",
     bullets: [
-      "Developed a mobile application for iOS and Android using React Native.",
-      "Gained knowledge of React Native's lifecycle and hooks while creating pixel-perfect user interfaces.",
+      "Developed a cross-platform iOS and Android app in React Native, building pixel-perfect interfaces.",
     ],
     skills: ["JavaScript", "React Native", "Expo", "Firebase", "Node.js"],
   },

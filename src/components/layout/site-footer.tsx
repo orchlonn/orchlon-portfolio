@@ -16,30 +16,27 @@ export function SiteFooter() {
             </p>
           </div>
 
-          <div>
-            <p className="type-label text-muted">Elsewhere</p>
-            <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 md:justify-end">
-              {SOCIALS.map((social) => (
-                <li key={social.label}>
-                  <ExternalLink
-                    href={social.href}
-                    showArrow={false}
-                    className="type-meta text-muted hover:text-ink"
-                  >
-                    {social.label}
-                  </ExternalLink>
-                </li>
-              ))}
-              <li>
-                <a
-                  href="#top"
-                  className="type-meta text-muted transition-colors hover:text-ink"
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 md:justify-end">
+            {SOCIALS.map((social) => (
+              <li key={social.label}>
+                <ExternalLink
+                  href={social.href}
+                  showArrow={false}
+                  className="type-meta text-muted hover:text-ink"
                 >
-                  Back to top &uarr;
-                </a>
+                  {social.label}
+                </ExternalLink>
               </li>
-            </ul>
-          </div>
+            ))}
+            <li>
+              <a
+                href="#top"
+                className="type-meta text-muted transition-colors hover:text-ink"
+              >
+                Back to top &uarr;
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>

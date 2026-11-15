@@ -6,6 +6,7 @@ import { NAV, SITE } from "@/data/site";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { cn } from "@/lib/utils";
 
+import { ExternalLink } from "../primitives/external-link";
 import { MobileNav } from "./mobile-nav";
 
 const SECTION_IDS = NAV.map((item) => item.id);
@@ -63,6 +64,14 @@ export function SiteHeader() {
                   </li>
                 );
               })}
+              <li className="border-l border-line pl-8">
+                <ExternalLink
+                  href={SITE.resume}
+                  className="type-label py-2 text-ink hover:text-muted"
+                >
+                  Résumé
+                </ExternalLink>
+              </li>
             </ul>
           </nav>
 

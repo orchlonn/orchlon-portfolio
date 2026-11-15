@@ -3,8 +3,8 @@ import { Section } from "../primitives/section";
 
 const FACTS = [
   { label: "Focus", value: "AI/ML, RAG systems, full-stack" },
-  { label: "Studied", value: "B.S. Computer Science, CWU" },
-  { label: "Recently", value: "AI Engineer, Chimege Systems LLC" },
+  { label: "Education", value: "B.S. Computer Science, CWU ’26" },
+  { label: "Most recently", value: "AI Engineer, Chimege Systems" },
 ] as const;
 
 export function About() {
@@ -17,7 +17,7 @@ export function About() {
               I&rsquo;m a software engineer working where machine learning meets
               product. Most of what I build starts as a hard retrieval or reasoning
               problem and ends as something people can actually use &mdash; a legal
-              research assistant, a trading companion, a classroom platform.
+              research assistant, a trading companion, an AI-native code editor.
             </p>
             <p>
               My work spans RAG pipelines and agent workflows, full-stack web and
@@ -26,9 +26,10 @@ export function About() {
               interfaces that stay legible under real data.
             </p>
             <p>
-              I&rsquo;m finishing a B.S. in Computer Science at Central Washington
-              University, where I&rsquo;ve also worked as an AI/ML researcher and
-              taught data structures as a TA.
+              I graduated from Central Washington University in 2026 with a B.S. in
+              Computer Science and a minor in Mathematics. While there I worked as an
+              AI/ML researcher and taught data structures and web development as a
+              TA.
             </p>
           </div>
         </Reveal>

@@ -1,30 +1,33 @@
-# Orchlon Portfolio
+# orchlon.dev
 
-A modern, responsive portfolio website featuring 3D graphics, smooth animations, and a dark-themed design.
+Personal portfolio of Oscar Chinbat: a single-page, editorial-style site with numbered sections for work, about, experience, education, stack and contact.
 
-## Tech Stack
+## Stack
 
-- **Next.js 14** - React framework with App Router
-- **TypeScript** - Type-safe JavaScript
-- **Tailwind CSS** - Utility-first CSS framework
-- **Framer Motion** - Animation library
-- **React Three Fiber / Three.js** - 3D particle effects and geometries
-- **Vercel** - Deployment and hosting
+- **Next.js 16** (App Router) and **React 19**
+- **TypeScript**
+- **Tailwind CSS 4**: design tokens live in `src/app/globals.css` under `@theme`
+- **Framer Motion**: scroll-reveal only, and it respects `prefers-reduced-motion`
+- Deployed on **Vercel**
 
-## Features
+## Editing content
 
-- Interactive 3D particle background with mouse parallax
-- Glitch text animation on hero section
-- 3D tilt card hover effects
-- Staggered entrance animations
-- Mobile-first responsive design
-- Smooth scroll navigation with active state highlighting
-- Dynamic imports for performance optimization
+All copy lives in typed data modules, so most updates don't touch a component:
 
-## Sections
+| File | Contents |
+| --- | --- |
+| `src/data/site.ts` | Name, headline, bio, nav, social links |
+| `src/data/projects.ts` | Featured projects and the "Also" archive line |
+| `src/data/experience.ts` | Work history and education |
+| `src/data/skills.ts` | Stack section |
 
-- **About** - Introduction with animated hero, availability badge, and social links
-- **Skills** - Categorized skill cards (Frontend, Backend, AI/ML, DevOps & Tools) with expandable tags
-- **Experience** - Roadmap-style timeline with alternating layout on desktop
-- **Projects** - Project showcase with image previews, tech tags, and links to GitHub, live demos, and app stores
-- **Resume** - Downloadable CV and cover letter PDFs
+The types are in `src/types/content.ts`. The résumé is served from `public/resume.pdf`.
+
+## Scripts
+
+```bash
+npm run dev        # local dev server
+npm run build      # production build
+npm run lint       # ESLint
+npm run typecheck  # tsc --noEmit
+```

@@ -6,9 +6,9 @@ export const SITE = {
   url: "https://orchlon.dev",
   email: "ch.orchlon@gmail.com",
   headline: "I design and build AI-powered products, end to end.",
-  bio: "I'm a software developer who builds end-to-end solutions across web, mobile, and AI/ML. I focus on applying machine learning and retrieval-augmented generation (RAG) to solve real-world problems, with a strong interest in developing secure, reliable, and scalable software.",
+  bio: "I build LLM systems and the products around them: RAG pipelines, multi-agent backends, and the web and iOS apps people actually use. Most recently I built agent infrastructure at Chimege Systems; before that I was the founding engineer on Invest AI.",
   proof:
-    "B.S. Computer Science, Central Washington University · GPA 3.93 · Founding engineer at Invest AI, live on the App Store",
+    "B.S. Computer Science, CWU ’26 · GPA 3.93 · Founding engineer, Invest AI (App Store) · Previously AI Engineer, Chimege Systems",
   resume: "/resume.pdf",
 } as const;
 

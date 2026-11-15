@@ -1,5 +1,6 @@
-import { SITE } from "@/data/site";
+import { SITE, SOCIALS } from "@/data/site";
 
+import { ExternalLink } from "../primitives/external-link";
 import { Reveal } from "../primitives/reveal";
 import { Section } from "../primitives/section";
 
@@ -19,6 +20,18 @@ export function Contact() {
         >
           {SITE.email}
         </a>
+      </Reveal>
+
+      <Reveal delay={0.12} className="mt-10">
+        <ul className="flex flex-wrap gap-x-8 gap-y-3">
+          {SOCIALS.map((social) => (
+            <li key={social.label}>
+              <ExternalLink href={social.href} className="type-meta text-muted hover:text-ink">
+                {social.label}
+              </ExternalLink>
+            </li>
+          ))}
+        </ul>
       </Reveal>
     </Section>
   );

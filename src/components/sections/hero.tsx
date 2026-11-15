@@ -34,6 +34,9 @@ export function Hero() {
               <a href="#work" className="rule-link text-ink">
                 Selected work
               </a>
+              <ExternalLink href={SITE.resume} className="rule-link text-ink">
+                Résumé (PDF)
+              </ExternalLink>
               <ExternalLink href={`mailto:${SITE.email}`} className="rule-link text-ink">
                 {SITE.email}
               </ExternalLink>

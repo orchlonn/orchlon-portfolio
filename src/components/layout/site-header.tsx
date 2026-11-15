@@ -9,7 +9,10 @@ import { cn } from "@/lib/utils";
 import { ExternalLink } from "../primitives/external-link";
 import { MobileNav } from "./mobile-nav";
 
-const SECTION_IDS = NAV.map((item) => item.id);
+/* The hero ("top") is tracked too, so no nav item is underlined while it is in
+   view. Without it the hook defaulted to "work" on load and stayed on the last
+   section after scrolling back up. */
+const SECTION_IDS = ["top", ...NAV.map((item) => item.id)];
 
 export function SiteHeader() {
   const activeId = useActiveSection(SECTION_IDS);
@@ -33,13 +36,15 @@ export function SiteHeader() {
         >
           <a
             href="#top"
-            className="text-[15px] font-medium tracking-[-0.02em] text-ink"
+            className="text-[15px] font-medium tracking-[-0.02em] whitespace-nowrap text-ink"
           >
             {SITE.name}
           </a>
 
+          {/* Tighter below lg: at gap-8 the nav overran a 768px tablet and
+              pushed the name onto two lines. */}
           <nav aria-label="Primary" className="hidden md:block">
-            <ul className="flex items-center gap-8">
+            <ul className="flex items-center gap-6 lg:gap-8">
               {NAV.map((item) => {
                 const isActive = activeId === item.id;
                 return (
@@ -64,7 +69,7 @@ export function SiteHeader() {
                   </li>
                 );
               })}
-              <li className="border-l border-line pl-8">
+              <li className="border-l border-line pl-6 lg:pl-8">
                 <ExternalLink
                   href={SITE.resume}
                   className="type-label py-2 text-ink hover:text-muted"

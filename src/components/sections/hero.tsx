@@ -1,47 +1,78 @@
+import { ArrowDown } from "lucide-react";
+import type { CSSProperties } from "react";
+
 import { SITE } from "@/data/site";
+import { cn } from "@/lib/utils";
 
 import { ExternalLink } from "../primitives/external-link";
-import { Reveal } from "../primitives/reveal";
+
+/* The hero is above the fold, so it animates with CSS from first paint rather
+   than through <Reveal>, which holds content at opacity 0 until hydration and
+   an intersection observer catch up. */
+const RISE = "motion-safe:animate-rise";
+const delay = (ms: number): CSSProperties => ({ animationDelay: `${ms}ms` });
 
 export function Hero() {
+  const lastLine = SITE.headlineLines.length - 1;
+
   return (
     <section id="top" aria-labelledby="hero-heading">
-      <div className="mx-auto w-full max-w-(--container-page) px-5 pt-16 pb-20 sm:px-8 md:pt-28 md:pb-32 lg:px-12 lg:pt-36 lg:pb-40">
-        <div className="grid grid-cols-4 gap-x-4 md:grid-cols-12 md:gap-x-6">
-          <Reveal className="col-span-4 md:col-span-11 lg:col-span-10">
-            <h1
-              id="hero-heading"
-              className="text-3xl font-medium tracking-[-0.035em] text-ink sm:text-4xl md:text-[3.5rem] md:leading-[0.98] lg:text-5xl"
+      {/* One column on one left edge at every size. The bio is capped near the
+          width of the headline's first line, so on desktop its right edge
+          lines up with that line too. */}
+      <div className="mx-auto w-full max-w-(--container-page) px-5 pt-14 pb-20 sm:px-8 md:pt-24 md:pb-28 lg:px-12 lg:pt-28 lg:pb-32">
+        {/* The line breaks are the composition, so lines never rewrap. The longest
+            line runs about 8.4em, and the size tracks the viewport to keep it
+            inside the gutters down to a 320px phone. */}
+        <h1
+          id="hero-heading"
+          className="text-[length:clamp(2rem,10.8vw_-_0.25rem,5.5rem)] leading-[0.95] font-normal tracking-[-0.045em] text-ink"
+        >
+          {SITE.headlineLines.map((line, i) => (
+            <span
+              key={line}
+              style={delay(90 + i * 80)}
+              className={cn(
+                "block whitespace-nowrap",
+                RISE,
+                i === lastLine && "font-serif text-[1.12em] tracking-[-0.015em] italic",
+              )}
             >
-              {SITE.headline}
-            </h1>
-          </Reveal>
+              {line}
+            </span>
+          ))}
+        </h1>
 
-          <Reveal delay={0.06} className="col-span-4 mt-10 md:col-span-6 lg:col-span-5">
-            <p className="max-w-[52ch] text-base leading-[1.6] text-muted md:text-lg">
-              {SITE.bio}
-            </p>
-          </Reveal>
+        <p
+          style={delay(380)}
+          className={cn(
+            "mt-10 max-w-[36rem] text-base leading-[1.65] text-muted md:mt-12 md:text-lg md:leading-[1.6]",
+            RISE,
+          )}
+        >
+          {SITE.bio}
+        </p>
 
-          <Reveal delay={0.12} className="col-span-4 mt-12 md:col-span-12">
-            <p className="type-meta border-t border-line pt-5 text-muted">
-              {SITE.proof}
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.18} className="col-span-4 mt-10 md:col-span-12">
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
-              <a href="#work" className="rule-link text-ink">
-                Selected work
-              </a>
-              <ExternalLink href={SITE.resume} className="rule-link text-ink">
-                Résumé (PDF)
-              </ExternalLink>
-              <ExternalLink href={`mailto:${SITE.email}`} className="rule-link text-ink">
-                {SITE.email}
-              </ExternalLink>
-            </div>
-          </Reveal>
+        <div
+          style={delay(460)}
+          className={cn("mt-9 flex flex-wrap items-center gap-x-7 gap-y-3 text-[15px] md:mt-10", RISE)}
+        >
+          <a
+            href="#work"
+            className="group/cta rule-link inline-flex items-center gap-1.5 text-ink"
+          >
+            Selected work
+            <ArrowDown
+              aria-hidden="true"
+              className="size-3.5 transition-transform duration-200 group-hover/cta:translate-y-0.5"
+            />
+          </a>
+          <ExternalLink href={SITE.resume} className="text-muted hover:text-ink">
+            Résumé (PDF)
+          </ExternalLink>
+          <ExternalLink href={`mailto:${SITE.email}`} className="text-muted hover:text-ink">
+            {SITE.email}
+          </ExternalLink>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion, type Transition, type Variants } from "framer-motion";
+import { motion, type Transition, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
 
 /* `as const` plus the explicit Transition annotation are load-bearing: since
@@ -29,18 +29,17 @@ interface RevealProps {
    containing the `inView` feature. Under LazyMotion `whileInView` never fires
    and every element stays stranded at opacity 0. */
 export function Reveal({ children, as = "div", delay = 0, className }: RevealProps) {
-  const reduceMotion = useReducedMotion();
   const Tag = motion[as];
 
-  /* Bail out to plain markup rather than a zeroed transition — content must
-     never be left stranded at opacity 0 when motion is reduced. */
-  if (reduceMotion) {
-    const Static = as;
-    return <Static className={className}>{children}</Static>;
-  }
-
+  /* Server and client must render the same element. This used to bail out to
+     plain markup when motion was reduced, but only the client knows that: the
+     server still sent the hidden state as inline opacity:0, React does not
+     patch attributes on a hydration mismatch, and every revealed section
+     stayed invisible with Reduce Motion on. globals.css now pins
+     [data-reveal] visible under reduced motion instead. */
   return (
     <Tag
+      data-reveal=""
       className={className}
       variants={fadeUp}
       initial="hidden"

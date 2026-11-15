@@ -1,17 +1,25 @@
 import type { NavItem, SocialLink } from "@/types/content";
 
+/* The hero breaks the headline exactly here and sets the last line in the
+   italic serif. Keep the longest line about this length: the hero's type
+   size is fitted to it so the lines never rewrap on a phone. */
+const HEADLINE_LINES = [
+  "I design and build",
+  "AI-powered products,",
+  "end to end.",
+] as const;
+
 export const SITE = {
   name: "Oscar Chinbat",
   role: "Full-Stack & AI Software Engineer",
   url: "https://orchlon.dev",
   email: "ch.orchlon@gmail.com",
-  headline: "I design and build AI-powered products, end to end.",
-  bio: "I build LLM systems and the products around them: RAG pipelines, multi-agent backends, and the web and iOS apps people actually use. Most recently I built agent infrastructure at Chimege Systems; before that I was the founding engineer on Invest AI.",
-  proof:
-    "B.S. Computer Science, CWU ’26 · GPA 3.93 · Founding engineer, Invest AI (App Store) · Previously AI Engineer, Chimege Systems",
+  headlineLines: HEADLINE_LINES,
+  /** The same sentence on one line, for metadata and the OG image. */
+  headline: HEADLINE_LINES.join(" "),
+  bio: "Most of my work is AI agents: multi-agent systems, tool calling, and the RAG pipelines that keep them grounded. At Khan Bank I’m developing AI agents that automate research and loan proposal workflows for relationship managers; before that, production agent infrastructure at Chimege Systems.",
   resume: "/resume.pdf",
 } as const;
-
 export const NAV: readonly NavItem[] = [
   { id: "work", label: "Work" },
   { id: "about", label: "About" },

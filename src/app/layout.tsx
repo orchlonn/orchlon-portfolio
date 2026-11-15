@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter_Tight } from "next/font/google";
+import { Instrument_Serif, Inter_Tight } from "next/font/google";
 import localFont from "next/font/local";
 
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -12,6 +12,16 @@ import "./globals.css";
 const display = Inter_Tight({
   subsets: ["latin"],
   variable: "--font-display",
+  display: "swap",
+});
+
+/* Italic only: the serif sets one thing, the accent line of the hero headline.
+   Named --font-instrument-serif so the --font-serif theme key can point at it. */
+const serif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: "italic",
+  variable: "--font-instrument-serif",
   display: "swap",
 });
 
@@ -82,7 +92,7 @@ export default function RootLayout({
       lang="en"
       // Next 16 removed the implicit smooth scroll; this opts back in.
       data-scroll-behavior="smooth"
-      className={`${display.variable} ${mono.variable} scroll-smooth`}
+      className={`${display.variable} ${serif.variable} ${mono.variable} scroll-smooth`}
     >
       <body>
         <a

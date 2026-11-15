@@ -2,9 +2,9 @@ import { Reveal } from "../primitives/reveal";
 import { Section } from "../primitives/section";
 
 const FACTS = [
-  { label: "Focus", value: "AI/ML, RAG systems, full-stack" },
+  { label: "Focus", value: "AI agents & LLM systems" },
+  { label: "Builds", value: "Full-stack web & mobile apps" },
   { label: "Education", value: "B.S. Computer Science, CWU ’26" },
-  { label: "Most recently", value: "AI Engineer, Chimege Systems" },
 ] as const;
 
 export function About() {
@@ -14,22 +14,20 @@ export function About() {
         <Reveal className="col-span-4 md:col-span-6">
           <div className="max-w-[58ch] space-y-6 text-base leading-[1.6] text-muted-strong md:text-lg">
             <p>
-              I&rsquo;m a software engineer working where machine learning meets
-              product. Most of what I build starts as a hard retrieval or reasoning
-              problem and ends as something people can actually use &mdash; a legal
-              research assistant, a trading companion, an AI-native code editor.
+              I&rsquo;m a software engineer focused on AI development. Most of my
+              work is building agents and the systems around them: multi-agent
+              workflows, tool calling, and retrieval pipelines that ground models in
+              real data. I care about the unglamorous parts too: evaluation, latency,
+              and correctness.
             </p>
             <p>
-              My work spans RAG pipelines and agent workflows, full-stack web and
-              mobile development, and the infrastructure that keeps them running. I
-              care about the unglamorous parts: evaluation, latency, correctness, and
-              interfaces that stay legible under real data.
+              On the web I work across the stack, from React and Next.js interfaces
+              to Python and Node.js APIs, databases, and deployment, so an AI feature
+              ships as a product people can use rather than a demo.
             </p>
             <p>
-              I graduated from Central Washington University in 2026 with a B.S. in
-              Computer Science and a minor in Mathematics. While there I worked as an
-              AI/ML researcher and taught data structures and web development as a
-              TA.
+              I also build cross-platform mobile apps in React Native and Expo, from
+              the first prototype to releases on the App Store and Google Play.
             </p>
           </div>
         </Reveal>

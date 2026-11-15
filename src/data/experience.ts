@@ -2,6 +2,18 @@ import type { Education, Experience } from "@/types/content";
 
 export const EXPERIENCE: readonly Experience[] = [
   {
+    id: "khan-bank",
+    start: "Sep 2026",
+    end: "Present",
+    role: "AI/Data Scientist",
+    company: "Khan Bank",
+    bullets: [
+      "Fine-tuned OCR models to improve text recognition for Mongolian-language financial documents.",
+      "Developed AI agents and automated research loan proposal workflows using LangGraph to streamline Relationship Managers’ tasks.",
+    ],
+    skills: ["OCR", "Fine-Tuning", "LangGraph", "AI Agents", "Workflow Automation"],
+  },
+  {
     id: "chimege",
     start: "Apr 2026",
     end: "Aug 2026",
@@ -89,12 +101,5 @@ export const EDUCATION: readonly Education[] = [
     credential: "Teaching Assistant, CS 302 & CS 351",
     institution: "Central Washington University",
     detail: "Advanced Data Structures & Algorithms · Web Development II",
-  },
-  {
-    id: "seattle-central-ta",
-    start: "Jan 2024",
-    end: "Mar 2024",
-    credential: "Teaching Assistant, CS 143 Data Structures",
-    institution: "Seattle Central College",
   },
 ] as const;

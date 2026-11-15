@@ -11,7 +11,7 @@ const HEADLINE_LINES = [
 
 export const SITE = {
   name: "Oscar Chinbat",
-  role: "Full-Stack & AI Software Engineer",
+  role: "AI Engineer",
   url: "https://orchlon.dev",
   email: "ch.orchlon@gmail.com",
   headlineLines: HEADLINE_LINES,

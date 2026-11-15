@@ -14,7 +14,7 @@ export function About() {
         <Reveal className="col-span-4 md:col-span-6">
           <div className="max-w-[58ch] space-y-6 text-base leading-[1.6] text-muted-strong md:text-lg">
             <p>
-              I&rsquo;m a software engineer focused on AI development. Most of my
+              I&rsquo;m an engineer focused on AI development. Most of my
               work is building agents and the systems around them: multi-agent
               workflows, tool calling, and retrieval pipelines that ground models in
               real data. I care about the unglamorous parts too: evaluation, latency,

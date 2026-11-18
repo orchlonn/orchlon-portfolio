@@ -5,6 +5,7 @@ import { SITE } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 import { ExternalLink } from "../primitives/external-link";
+import { HeroLandscape } from "./hero-landscape";
 
 /* The hero is above the fold, so it animates with CSS from first paint rather
    than through <Reveal>, which holds content at opacity 0 until hydration and
@@ -16,11 +17,15 @@ export function Hero() {
   const lastLine = SITE.headlineLines.length - 1;
 
   return (
-    <section id="top" aria-labelledby="hero-heading">
+    <section id="top" aria-labelledby="hero-heading" className="relative">
+      {/* Decorative contour field in the whitespace right of the headline, lg
+          and up. It sits behind the copy and never takes pointer events. */}
+      <HeroLandscape />
+
       {/* One column on one left edge at every size. The bio is capped near the
           width of the headline's first line, so on desktop its right edge
-          lines up with that line too. */}
-      <div className="mx-auto w-full max-w-(--container-page) px-5 pt-14 pb-20 sm:px-8 md:pt-24 md:pb-28 lg:px-12 lg:pt-28 lg:pb-32">
+          lines up with that line too. Relative so it paints above the field. */}
+      <div className="relative mx-auto w-full max-w-(--container-page) px-5 pt-14 pb-20 sm:px-8 md:pt-24 md:pb-28 lg:px-12 lg:pt-28 lg:pb-32">
         {/* The line breaks are the composition, so lines never rewrap. The longest
             line runs about 8.4em, and the size tracks the viewport to keep it
             inside the gutters down to a 320px phone. */}

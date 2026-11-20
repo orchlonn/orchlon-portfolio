@@ -2,6 +2,8 @@
 
 import { type CSSProperties, useEffect, useRef } from "react";
 
+import { subscribeToTheme } from "@/lib/theme";
+
 /* The hero's right-hand whitespace: a loss surface drawn as a contour map, with
    an optimiser rolling downhill across it.
 
@@ -50,6 +52,7 @@ const MAX_PLOTTED = 48;
 const SETTLED_SPEED = 0.04;
 const REST_SECONDS = 1.8;
 const FADE_SECONDS = 0.9;
+const BETWEEN_RUNS_SECONDS = 0.8;
 const PING_SECONDS = 0.9;
 /** Give up on a run that never settles, unless the cursor is steering it. */
 const MAX_RUN_SECONDS = 14;
@@ -558,11 +561,22 @@ const levelOf = (height: number) => (height - LEVEL_FLOOR) / LEVEL_STEP;
 
 /** Sets up the canvas and its loop; returns the teardown. */
 function mount(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
-  const css = getComputedStyle(canvas);
-  const token = (name: string, fallback: string) => css.getPropertyValue(name).trim() || fallback;
-  const ink = token("--color-ink", "#111111");
-  const accent = token("--color-accent", "#b4400f");
-  const paper = token("--color-bg", "#ffffff");
+  /* The tokens are light-dark() pairs, which a custom property reports
+     unresolved, so each one goes through `color` to come back as a colour. */
+  const token = (name: string, fallback: string) => {
+    canvas.style.color = `var(${name}, ${fallback})`;
+    return getComputedStyle(canvas).color;
+  };
+  let ink = "";
+  let accent = "";
+  let paper = "";
+  const readTokens = () => {
+    ink = token("--color-ink", "#111111");
+    accent = token("--color-accent", "#b4400f");
+    paper = token("--color-bg", "#ffffff");
+    canvas.style.color = "";
+  };
+  readTokens();
 
   const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const surface = new Surface();
@@ -573,6 +587,8 @@ function mount(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
   let dpr = 1;
   /** Seconds the animation has actually run; it stands still off screen. */
   let time = 0;
+  /** Seconds since the last run faded out. */
+  let idle = 0;
   let pending = 0;
   let raf = 0;
   let last = 0;
@@ -620,8 +636,10 @@ function mount(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
     while (pending >= STEP) {
       pending -= STEP;
       if (!run.alive) {
-        if (time < FIRST_RUN_AT) continue;
+        idle += STEP;
+        if (time < FIRST_RUN_AT || idle < BETWEEN_RUNS_SECONDS) continue;
         run.spawn(surface, Math.random);
+        idle = 0;
       }
       const steered =
         well.strength > 0.2 && Math.hypot(run.x - well.x, run.y - well.y) < WELL_SPREAD * 3;
@@ -709,22 +727,36 @@ function mount(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
   const onPointerGone = () => {
     pointer.present = false;
   };
+  // No related target means the pointer left the window. The field runs to
+  // the window's right edge, so that is a common way out of it.
+  const onPointerOut = (event: PointerEvent) => {
+    if (!event.relatedTarget) onPointerGone();
+  };
+
+  // A running loop picks the new colours up on its next frame; a still or
+  // off-screen canvas has to be redrawn now.
+  const onThemeChange = () => {
+    readTokens();
+    if (!running && surface.width > 0) render(motion.matches ? Infinity : revealAt());
+  };
 
   resize.observe(canvas);
   onScreen.observe(canvas);
+  const unsubscribeTheme = subscribeToTheme(onThemeChange);
   motion.addEventListener("change", onMotionChange);
   window.addEventListener("pointermove", onPointerMove, { passive: true });
   window.addEventListener("blur", onPointerGone);
-  document.documentElement.addEventListener("pointerleave", onPointerGone);
+  document.addEventListener("pointerout", onPointerOut);
 
   return () => {
     stop();
     resize.disconnect();
     onScreen.disconnect();
+    unsubscribeTheme();
     motion.removeEventListener("change", onMotionChange);
     window.removeEventListener("pointermove", onPointerMove);
     window.removeEventListener("blur", onPointerGone);
-    document.documentElement.removeEventListener("pointerleave", onPointerGone);
+    document.removeEventListener("pointerout", onPointerOut);
   };
 }
 

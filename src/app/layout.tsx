@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SITE } from "@/data/site";
 import { personJsonLd } from "@/lib/seo";
+import { themeScript } from "@/lib/theme";
 
 import "./globals.css";
 
@@ -77,9 +78,14 @@ export const metadata: Metadata = {
   },
 };
 
+/* theme-color follows the system setting only: a choice made with the toggle
+   doesn't reach the browser chrome. Keep the colours in step with --color-bg. */
 export const viewport: Viewport = {
-  colorScheme: "light",
-  themeColor: "#ffffff",
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0e0e0d" },
+  ],
   width: "device-width",
   initialScale: 1,
 };
@@ -93,7 +99,12 @@ export default function RootLayout({
       // Next 16 removed the implicit smooth scroll; this opts back in.
       data-scroll-behavior="smooth"
       className={`${display.variable} ${serif.variable} ${mono.variable} scroll-smooth`}
+      // The theme script sets data-theme before React hydrates.
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <a
           href="#main"

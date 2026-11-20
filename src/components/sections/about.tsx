@@ -9,10 +9,10 @@ const FACTS = [
 
 export function About() {
   return (
-    <Section id="about" index="02" label="About" surface>
+    <Section id="about" index="02" label="About">
       <div className="grid grid-cols-4 gap-x-4 md:grid-cols-9 md:gap-x-6">
         <Reveal className="col-span-4 md:col-span-6">
-          <div className="max-w-[58ch] space-y-6 text-base leading-[1.6] text-muted-strong md:text-lg">
+          <div className="max-w-[58ch] space-y-6 text-base leading-[1.6] text-muted md:text-lg">
             <p>
               I&rsquo;m an engineer focused on AI development. Most of my
               work is building agents and the systems around them: multi-agent
@@ -33,10 +33,10 @@ export function About() {
         </Reveal>
 
         <Reveal delay={0.08} className="col-span-4 mt-10 md:col-span-3 md:mt-0">
-          <dl className="border-t border-line-strong">
+          <dl className="border-t border-line">
             {FACTS.map((fact) => (
-              <div key={fact.label} className="border-b border-line-strong py-4">
-                <dt className="type-label text-muted-strong">{fact.label}</dt>
+              <div key={fact.label} className="border-b border-line py-4">
+                <dt className="type-label text-muted">{fact.label}</dt>
                 <dd className="mt-1.5 text-sm text-ink">{fact.value}</dd>
               </div>
             ))}

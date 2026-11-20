@@ -9,8 +9,6 @@ interface SectionProps {
   index: string;
   label: string;
   children: ReactNode;
-  /** Tonal break. Only About uses it; muted text inside must step up a tone. */
-  surface?: boolean;
   className?: string;
 }
 
@@ -19,7 +17,6 @@ export function Section({
   index,
   label,
   children,
-  surface = false,
   className,
 }: SectionProps) {
   const headingId = `${id}-heading`;
@@ -28,23 +25,13 @@ export function Section({
     <section
       id={id}
       aria-labelledby={headingId}
-      className={cn(
-        "scroll-mt-16 border-t border-line",
-        surface && "bg-surface",
-        className,
-      )}
+      className={cn("scroll-mt-16 border-t border-line", className)}
     >
       <div className="mx-auto w-full max-w-(--container-page) px-5 py-16 sm:px-8 md:py-24 lg:px-12 lg:py-32">
         <div className="grid grid-cols-4 gap-x-4 md:grid-cols-12 md:gap-x-6">
           <div className="col-span-4 md:col-span-3">
             <Reveal>
-              <h2
-                id={headingId}
-                className={cn(
-                  "type-label flex items-baseline gap-3",
-                  surface ? "text-muted-strong" : "text-muted",
-                )}
-              >
+              <h2 id={headingId} className="type-label flex items-baseline gap-3 text-muted">
                 <span className="tabular-nums">{index}</span>
                 <span>{label}</span>
               </h2>

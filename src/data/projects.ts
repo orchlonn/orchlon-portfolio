@@ -33,6 +33,7 @@ export const PROJECTS: readonly Project[] = [
       {
         label: "Google Play",
         href: "https://play.google.com/store/apps/details?id=com.orchlon.SmartTradeAI",
+        primary: true,
       },
     ],
   },

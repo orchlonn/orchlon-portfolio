@@ -87,9 +87,19 @@ export function ProjectRow({ project, featured = false }: ProjectRowProps) {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="type-meta relative z-10 inline-flex items-center gap-1 text-muted transition-colors duration-200 hover:text-ink"
+            className={
+              link.primary
+                ? "type-meta relative z-10 inline-flex items-center gap-1 text-ink"
+                : "type-meta relative z-10 inline-flex items-center gap-1 text-muted transition-colors duration-200 hover:text-ink"
+            }
           >
             {link.label}
+            {link.primary ? (
+              <ArrowUpRight
+                aria-hidden="true"
+                className="size-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              />
+            ) : null}
             <span className="sr-only"> (opens in a new tab)</span>
           </a>
         ))}

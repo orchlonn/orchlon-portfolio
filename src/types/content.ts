@@ -6,6 +6,8 @@ export interface NavItem {
 export interface ProjectLink {
   label: string;
   href: string;
+  /** Style a later link like the first one — for peers such as a second app store. */
+  primary?: boolean;
 }
 
 export interface Project {
